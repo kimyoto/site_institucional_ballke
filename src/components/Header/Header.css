@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'Aller'; 
+  src: url('../../assets/fonts/aller.ttf') format('truetype'); 
+  font-weight: normal; 
+  font-style: normal;
+}
+
+
+body {
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.site-header {
+  width: 100%;
+  background-color: transparent; 
+  padding: 1px 0; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+
+.header-container {
+  max-width: 937px; 
+  width: 100%; 
+  margin: 0 auto; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+
+
+.logo {
+  width: 108px;
+  height: 66px;
+  object-fit: contain;
+  transform: rotate(90deg);
+  position: relative;
+  top: 10px;
+  right: 22px;
+}
+
+.header-center nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 40px;
+}
+
+.header-center nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: normal;
+  transition: color 0.3s ease;
+  font-family: 'Aller', sans-serif;
+  font-style: normal;
+}
+
+.header-center nav a:hover {
+  color: #bbbbbb;
+}
+
+.contact-button {
+  background-color: rgba(217, 217, 217, 0.6);
+  color: #ffffff;
+  border: 1px solid rgba(217, 217, 217, 0.6);
+  padding: 1px 16px;
+  border-radius: 20px;
+  font-family: 'Aller', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+-webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  position: relative;
+  top: 5px;
+  font-style: normal;
+
+ 
+}
+
+.contact-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+

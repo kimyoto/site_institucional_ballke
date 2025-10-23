@@ -7,6 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@font-face {
+  font-display: swap; 
+  font-family: 'Aller';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./assets/fonts/aller.ttf') format('ttf'); 
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
