@@ -23,10 +23,11 @@
 
   .section-bg-two { /*Segunda imagem da tela inical*/
     width: 1366px; 
-    height: 468px; 
+    height: 464px; 
     margin: 0 auto; 
-    background-image: url('./assets/background2.png'); 
-    background-size: 1366px 468px;
+    background-image: 
+    url('./assets/background2.png'); 
+    background-size: 1368px 468px;
     background-position: center center;
     background-repeat: no-repeat;
     position: relative;
@@ -49,7 +50,6 @@
 .hero-button {
   position: absolute; 
   z-index: 10;        
-  
   background-color: transparent;
   border-radius: 15px;
   border: 2px solid #ffffff; 
@@ -107,8 +107,8 @@
   height: 459px;
   margin: 0 auto;
   position: relative;
-    background-image: 
-    radial-gradient(ellipse at center, rgba(0,0,0,0) 1%, rgba(0,0,0,0.7) 80%),
+    background-image:  
+    linear-gradient(to left, rgba(0,0,0,0) 5%, rgba(0,0,0,0.7) 90%),
     url('./assets/background3.png'); 
   background-size: 1366px 459px;
   background-position: center center;
@@ -120,7 +120,7 @@
   position: absolute;
   z-index: 10;
   top: 12px;  
-  left: 62px; 
+  left: 60px; 
   font-family: 'Aller', sans-serif;
   font-weight: normal;
   font-style: normal;
@@ -159,6 +159,8 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  top: 180px;  
+  left: 60px;
 }
 
 .conheca-button:hover {
@@ -166,53 +168,47 @@
   color: #000000;
 }
 
-.button-3 {
-  top: 185px;
-  left: 62px;
-}
-
-.section-bg-four {
+.section-bg-four { /*Quarta imagem*/
   width: 1366px;
   height: 459px;
   margin: 0 auto;
   position: relative;
   background-image: 
-    radial-gradient(ellipse at center, rgba(0,0,0,0) 5%, rgba(0,0,0,0.7) 70%),
+    linear-gradient(to left, rgba(0,0,0,0) 5%, rgba(0,0,0,0.7) 90%),
     url('./assets/background4.png');
   background-size: 1366px 459px;
-  
   background-position: center center;
   background-repeat: no-repeat;
+  margin-bottom: 40px;
 }
 
 .bg-four-text {
   position: absolute;
   z-index: 10;
-    top: 100px;
-  left: 100px;
+  top: 10px;  
+  left: 60px; 
   font-family: 'Aller', sans-serif;
   font-weight: normal;
   font-style: normal;
   color: #ffffff;
-  font-size: 32px; 
+  font-size: 40px; 
+  font-weight: 400;
   white-space: nowrap; 
-  line-height: 1.4;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
-}
+  }
 
-.saiba-mais-button {
+  .saiba-mais-button {
   position: absolute;
   z-index: 10;
   background-color: transparent;
-  border-radius: 15px;
+  border-radius: 8px; 
   border: 2px solid #ffffff; 
-  color: #ffffff;
-  font-family: 'Aller', sans-serif;
-  font-weight: normal;
-  font-size: 16px;
+   color: #ffffff;
+  font-family: 'Aller', sans-serif; 
+  font-weight: 400;
+  font-size: 32px; 
   text-decoration: none; 
-  width: 180px; 
-  height: 50px; 
+  width: 341px; 
+  height: 65px; 
   padding: 0; 
   display: flex;
   align-items: center;
@@ -226,8 +222,170 @@
   color: #000000;
 }
 
-/* --- Posição do Botão "Saiba Mais" --- */
 .button-4 {
-  top: 180px;
-  left: 100px;
+  top: 197px; 
+  left: 60px; 
+}
+
+.section-bg-five {
+  width: 1367px;
+  height: 459px;
+  margin: 0 auto;
+  position: relative;
+  background-image: 
+      linear-gradient(to left, rgba(0,0,0,0) 5%, rgba(0,0,0,0.7) 90%),
+      url('./assets/background5.png'); 
+  background-size: 1367px 459px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin-bottom: 46px;
+
+}
+
+
+.bg-five-text {
+  position: absolute;
+  z-index: 10;
+  top: 25px;
+  left: 60px; 
+  font-family: 'Aller', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  color: #ffffff;
+  font-size: 40px; 
+  white-space: nowrap; 
+  line-height: 1.4;
+}
+
+.vagas-button {
+  position: absolute;
+  z-index: 10;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #ffffff; 
+  color: #ffffff;
+  font-family: 'Aller', sans-serif;
+  font-weight: 400;
+  font-size: 32px; 
+  text-decoration: none; 
+  width: 341px; 
+  height: 65px; 
+  padding: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vagas-button:hover {
+  background-color: #ffffff; 
+  color: #000000;
+}
+
+.button-5 {
+  top: 143px; 
+  left: 60px; 
+}
+
+.app-footer {
+  width: 1366px;
+  height: 46px;
+  background-color: #D9D9D93B;
+  margin: 0 auto;
+}
+
+.footer-container {
+  width: 100%; 
+}
+
+.footer-bar-gray {
+  width: 1366px;
+  height: 46px;
+  background-color: #D9D9D93B;
+  margin: 0 auto;
+}
+
+.footer-bar-white {
+  width: 1366px;
+  height: 46px; 
+  background-color: #FFFFFF; 
+  margin: 0 auto;
+}
+
+
+.footer-bar-gray {
+  width: 1366px;
+  height: 46px;
+  background-color: #D9D9D93B;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 0 58px;
+  position: relative;
+}
+
+.footer-links-group {
+  display: flex;
+  gap: 30px; 
+}
+
+.footer-link {
+  font-family: 'Aller', sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  color: #4D555A; 
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: absolute;
+  top: 13px;
+  z-index: 10;
+  height: 400;
+}
+
+.link-contato {
+  left: 218px; 
+}
+
+.link-servicos {
+  left: 525px; 
+}
+
+.link-carreira {
+  left: 834px;
+}
+
+.footer-link:hover {
+  color: #bbbbbb; 
+}
+
+.footer-social-group {
+  display: flex;
+  align-items: center;
+  gap: 9px; 
+  height: 100%;
+}
+
+.footer-social-icon {
+  height: 24px; 
+  width: auto; 
+}
+
+.footer-bar-white {
+  width: 1366px;
+  height: 46px; 
+  background-color: #FFFFFF; 
+  margin: 0 auto;
+  position: relative;
+}
+
+.footer-logo {
+  position: absolute;
+  z-index: 10;
+  left: 71px; 
+  top: 10px;
+  width: 56px;
+  height: 26px;
+  object-fit: contain; 
 }
