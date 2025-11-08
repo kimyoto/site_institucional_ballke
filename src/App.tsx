@@ -4,6 +4,8 @@ import Header from './components/Header/Header';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import ConhecaPage from './pages/ConhecaPage';
+import QuemSomosPage from './pages/QuemSomosPage';
+import NossaCulturaPage from './pages/NossaCulturaPage';
 
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
 <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/conheca" element={<ConhecaPage />} />
+        <Route path="/quem-somos" element={<QuemSomosPage />}/>
+        <Route path="/nossa-cultura" element={<NossaCulturaPage />} />
       </Routes>
 
         <footer className="footer-container">
@@ -34,6 +38,7 @@ function App() {
               <a href="/servicos" className="footer-link link-servicos">Serviços</a>
   
               <a href="/carreiras" className="footer-link link-carreira">Carreira</a>
+              
 
             </div>
 

@@ -482,3 +482,277 @@ position: absolute;
   line-height: 1.2;
   text-align: center;
 }
+
+.quemsomos-hero-background {
+  width: 1366px;
+  height: 549px; 
+  margin: 0 auto;
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url('./assets/topoquemsomos.png');
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.text-topo-quemsomos {
+  position: absolute;
+  z-index: 10;
+  top: 137px;
+  left: 397px;
+  font-family: 'Aller', sans-serif;
+  font-weight: 400; 
+  font-size: 96px;
+  color: #ffffff; 
+  line-height: 1.2;
+  text-align: center;
+}
+
+.text-images-quemsomos {
+  height: 400px;
+  width: 1366px;
+  margin: 0 auto;
+  padding: 80px 0; 
+  position: relative;
+  text-align: center; 
+}
+
+.quemsomos-grupoballke{
+  position: absolute;
+  z-index: 10;
+  top: 15px;
+  left: 191px;
+  right: 963px; 
+  font-family: 'Aller', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #4D555A;
+  text-align: justify;
+  line-height: 1.5; 
+}
+
+.quemsomos-text-1{
+position: absolute;
+  z-index: 10;
+  top: 96px;
+  left: 191px;
+  right: 190px; 
+  font-family: 'Aller', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4D555A;
+  text-align: justify;
+  line-height: 1.5; 
+}
+.quemsomos-text-2{
+position: absolute;
+  z-index: 10;
+  top: 185px;
+  left: 191px;
+  right: 190px; 
+  font-family: 'Aller', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4D555A;
+  text-align: justify;
+  line-height: 1.5; 
+}
+.quemsomos-text-3{
+position: absolute;
+  z-index: 10;
+  top: 252px;
+  left: 191px;
+  right: 190px; 
+  font-family: 'Aller', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4D555A;
+  text-align: justify;
+  line-height: 1.5; 
+}
+
+.quemsomos-images {
+  width: 993px;
+  height: 395px; 
+  margin: 0 auto;
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url('./assets/quemsomos1.png');
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.gray-bar-atuacao {
+  width: 993px;
+  height: 48px;
+  background-color: #D9D9D93B;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 30px;
+  margin-bottom: 26px;
+}
+
+.text-images-1 {
+  font-family: 'Aller', sans-serif;
+  font-size: 22px; 
+  font-weight: 700; 
+  color: #4D555A;  
+  margin: 0;
+}
+
+.quemsomos-two-column-section {
+  width: 1366px; 
+  height: 450px; 
+  margin: 0 auto;
+  position: relative;
+}
+
+.column-left-block {
+  position: absolute;
+  top: 0;
+  left: 189px; 
+  width: 466px; 
+  z-index: 10;
+}
+
+.column-right-block {
+  position: absolute;
+  top: 0;
+  right: 184px; 
+  width: 466px; 
+  z-index: 10;
+}
+
+.column-left-block img,
+.column-right-block img {
+  width: 100%; 
+  height: auto; 
+  display: block; 
+}
+
+.image-gray-bar {
+  width: 100%; 
+  height: 52px; 
+  background-color: #D9D9D93B;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 30px;
+}
+
+.image-gray-bar h3 {
+  font-family: 'Aller', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #4D555A;
+  margin: 0; 
+}
+
+.nossa-cultura-hero-background {
+  width: 1366px;
+  height: 548px; 
+  position: relative; 
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), 
+    url('./assets/nossacultura-topobkg.png'); 
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+
+}
+
+
+.nossa-cultura-hero-title {
+  position: absolute;
+  z-index: 10;
+  top: 125px; 
+  left: 386px; 
+  font-family: 'Aller', sans-serif;
+  font-weight: 400; 
+  font-size: 96px; 
+  color: #ffffff;
+  white-space: nowrap; 
+}
+
+.cultura-content-section {
+  width: 1366px; 
+  margin: 0 auto;  
+  
+  padding-top: 91px;     
+  padding-left: 299px;   
+  padding-right: 343px;  
+  
+  box-sizing: border-box; 
+  
+  padding-bottom: 100px;
+}
+
+.cultura-subtitle {
+  font-family: 'Aller', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #4D555A;
+  margin: 0; 
+  text-align: left;
+}
+
+.cultura-text {
+  font-family: 'Aller', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4D555A;
+  text-align: justify;
+  line-height: 1.5;
+  margin: 0; 
+}
+
+.cultura-text {
+  margin-top: 23px; 
+}
+
+.cultura-subtitle {
+  margin-top: 40px; 
+}
+
+
+.cultura-text {
+  margin-top: 34px; 
+}
+
+h2.cultura-subtitle:last-of-type { 
+  margin-top: 40px; 
+}
+
+.cultura-values-list {
+  font-family: 'Aller', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #4D555A;
+  list-style: none; 
+  padding-left: 0;
+  margin: 0;
+  margin-top: 43px; 
+}
+
+.cultura-values-list li {
+  margin-bottom: 40px; 
+  padding-left: 20px; 
+  position: relative;
+}
+
+.cultura-values-list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background-color: #4D555A; 
+  border-radius: 50%; 
+  position: absolute;
+  left: 0;
+  top: 8px; 
+}
