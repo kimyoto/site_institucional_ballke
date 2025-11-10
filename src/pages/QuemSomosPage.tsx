@@ -1,4 +1,6 @@
 import React from 'react';
+import './QuemSomosPage.css';
+import { Link } from 'react-router-dom';
 
 function QuemSomosPage() {
   return (
@@ -32,12 +34,15 @@ function QuemSomosPage() {
           </div>
         </div>
 
-        <div className="column-right-block">
-          <img src={require('../assets/quemsomos3.png')} alt="Nossa Cultura" />
-          <div className="image-gray-bar">
-            <h3>NOSSA CULTURA</h3>
+          <Link to="/nossa-cultura" className="link-block-wrapper">
+          <div className="column-right-block">
+            <img src={require('../assets/quemsomos3.png')} alt="Nossa Cultura" />
+            <div className="image-gray-bar">
+              <h3>Nossa cultura</h3>
+            </div>
           </div>
-        </div>
+          </Link>
+
       </section>
     </>
   );

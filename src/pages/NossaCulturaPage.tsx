@@ -1,4 +1,6 @@
 import React from 'react';
+import './NossaCulturaPage.css';
+
 
 function NossaCulturaPage() {
   return (

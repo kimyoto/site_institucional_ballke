@@ -1,4 +1,5 @@
 import React from 'react';
+import './ConhecaPage.css';
 
 function ConhecaPage() {
   return (

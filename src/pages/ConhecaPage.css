@@ -1,0 +1,93 @@
+.conheca-hero-background {
+
+  width: 1366px; 
+  height: 550px; 
+  margin: 0 auto;
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(17, 17, 17, 0.5), rgba(24, 24, 24, 0.5)), 
+    url('../assets/conhecatopo.png');
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+.conheca-main-background {
+  width: 1366px;
+  height: 1973px;
+  margin: 0 auto;
+    position: relative;
+  background-image: url('../assets/conhecabkg.png');
+  background-size: 1366px 1973px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.conheca-text-1{
+position: absolute;
+  z-index: 10;
+  top: 81px;
+  left: 173px;
+  right: 173px; 
+  font-family: 'Aller', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #4D555A;
+  text-align: justify;
+  line-height: 1.5; 
+}
+
+.conheca-text-2{
+position: absolute;
+  z-index: 10;
+  top: 222px;
+  left: 173px;
+  right: 173px; 
+  font-family: 'Aller', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #4D555A;
+  text-align: justify;
+  line-height: 1.5; 
+}
+
+.conheca-text-3{
+position: absolute;
+  z-index: 10;
+  top: 457px;
+  left: 173px;
+  right: 173px; 
+  font-family: 'Aller', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #4D555A;
+  text-align: justify;
+  line-height: 1.5; 
+}
+
+.conheca-lona-image {
+  position: absolute;
+  z-index: 10;
+  top: 615px; 
+  left: 0; 
+  right: 0;
+  margin: 0 auto; 
+  width: 1366px;
+  height: 922px;
+  object-fit: contain; 
+}
+
+.topo-text-1 {
+  position: absolute;
+  z-index: 10;
+  top: 80px;
+  left: 350px;
+  font-family: 'Aller', sans-serif;
+  font-weight: 500; 
+  font-size: 96px;
+  color: #ffffff; 
+  line-height: 1.2;
+  text-align: center;
+}
+
