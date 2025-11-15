@@ -168,3 +168,51 @@ position: absolute;
   margin: 0; 
 }
 
+.parceiros-section {
+  width: 1366px; 
+  margin: 0 auto;  
+  margin-top: 50px;
+  margin-bottom: 140px; 
+  position: relative;
+  height: 178px; 
+}
+
+
+.parceiros-title {
+  position: absolute;
+  z-index: 10;
+  top: 0; 
+  left: 577px;
+  font-family: 'Aller', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #4D555A;
+  margin: 0;
+  white-space: nowrap;
+}
+
+
+.parceiros-logo {
+  position: absolute;
+  z-index: 10;
+  top: 100px; 
+}
+
+
+.logo-meta {
+  left: 189px; 
+  width: 273px;
+  height: 55px;
+}
+
+.logo-google {
+  left: 548px; 
+  width: 246px;
+  height: 83px;
+}
+
+.logo-optidata {
+  right: 185px; 
+  width: 301px;
+  height: 76px;
+}

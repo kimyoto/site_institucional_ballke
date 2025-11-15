@@ -42,8 +42,35 @@ function QuemSomosPage() {
             </div>
           </div>
           </Link>
+      </section>
+
+      <section className="parceiros-section">
+
+        <h2 className="parceiros-title">
+          Parceiros
+        </h2>
+
+        <img 
+          src={require('../assets/meta.png')} 
+          alt="Logo Meta"
+          className="parceiros-logo logo-meta"
+        />
+
+        <img 
+          src={require('../assets/google.png')} 
+          alt="Logo Google"
+          className="parceiros-logo logo-google"
+        />
+
+        <img 
+          src={require('../assets/optidata.png')} 
+          alt="Logo Optidata"
+          className="parceiros-logo logo-optidata"
+        />
 
       </section>
+      
+
     </>
   );
 }

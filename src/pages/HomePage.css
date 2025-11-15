@@ -16,6 +16,17 @@
   position: relative;
   }
 
+  .text-top {
+    position: absolute; 
+    top: 250px;   
+    left: 63px;
+    font-family: 'Aller', sans-serif;
+    color: #ffffff;
+    font-size: 55px; 
+    font-weight: 600;
+
+  }
+
   .section-bg-two { /*Segunda imagem da tela inical*/
     width: 1366px; 
     height: 464px; 
@@ -154,7 +165,7 @@
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  top: 180px;  
+  top: 149px;  
   left: 60px;
 }
 
@@ -218,7 +229,7 @@
 }
 
 .button-4 {
-  top: 197px; 
+  top: 130px; 
   left: 60px; 
 }
 

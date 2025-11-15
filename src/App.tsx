@@ -6,7 +6,9 @@ import HomePage from './pages/HomePage';
 import ConhecaPage from './pages/ConhecaPage';
 import QuemSomosPage from './pages/QuemSomosPage';
 import NossaCulturaPage from './pages/NossaCulturaPage';
-
+import MarcasPage from './pages/MarcasPage';
+import CarreirasPage from './pages/CarreirasPage';
+import ContatoPage from './pages/ContatoPage';
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
         <Route path="/conheca" element={<ConhecaPage />} />
         <Route path="/quem-somos" element={<QuemSomosPage />}/>
         <Route path="/nossa-cultura" element={<NossaCulturaPage />} />
+        <Route path="/marcas" element={<MarcasPage />} />
+        <Route path="/carreiras" element={<CarreirasPage />} />
+        <Route path="/contato" element={<ContatoPage />} />
       </Routes>
 
         <footer className="footer-container">

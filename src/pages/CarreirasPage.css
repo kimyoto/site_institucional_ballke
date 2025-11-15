@@ -1,0 +1,103 @@
+.carreiras-hero-background {
+  width: 1366px;
+  height: 548px; 
+  margin: 0 auto;
+  position: relative; 
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url('../assets/carreiras-bkg.png'); 
+  background-size: 1366px 548px; 
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.carreiras-hero-title {
+  position: absolute;
+  z-index: 10;
+  top: 140px; 
+  left: 489px; 
+  font-family: 'Aller', sans-serif;
+  font-weight: 400; 
+  font-size: 96px; 
+  color: #ffffff;
+}
+
+.carreiras-text {
+  width: 1366px; 
+  margin: 0 auto; 
+  padding: 63px 0 68px 0;
+}
+
+.carreiras-text1{
+    margin-left: 270px;
+    margin-right: 270px;
+    box-sizing: border-box; 
+    font-family: 'Aller', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4D555A;
+    text-align: justify;
+    line-height: 1.5;   
+}
+
+.vagas-hero{
+    width: 1366px; 
+    margin: 0 auto; 
+    padding: 0px 0 0px 0;
+}
+
+.vagas{
+    margin-left: 270px;
+    font-size: 32px;
+    font-family: 'Aller', sans-serif;
+    color: #4D555A;
+    font-weight: 600;
+}
+
+.vagas-lista-container {
+  width: 1366px; 
+  margin: 0 auto;
+padding: 0 360px 0 269px;
+  box-sizing: border-box;
+  margin-top: 0px;
+  margin-bottom: 80px;
+}
+
+.vaga-item {
+  position: relative; 
+  height: 50px; 
+  font-family: 'Aller', sans-serif;
+  font-size: 14px;
+  color: #4D555A;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.vaga-item:first-child {
+  border-top: none;
+}
+
+.vaga-titulo,
+.vaga-local,
+.vaga-tipo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.vaga-titulo {
+  left: 0;
+  text-align: left;
+}
+
+
+.vaga-local {
+  left: 303px; 
+  text-align: left;
+}
+
+
+.vaga-tipo {
+  right: 46px; 
+  text-align: right;
+}

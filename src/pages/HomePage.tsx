@@ -1,5 +1,6 @@
 import React from 'react';
 import './HomePage.css';
+import { Link } from 'react-router-dom';
 
 
 function HomePage() {
@@ -8,7 +9,10 @@ function HomePage() {
         
      
         <section className="hero-section">
-          
+          <h2 className='text-top'>
+            Seja bem-vindo ao<br />
+            Grupo Ballke!
+          </h2>
           
           <h2 className="text-bg2">
             Confira nossas marcas e descubra qual é a ideal para você.
@@ -55,11 +59,11 @@ function HomePage() {
 
             <section className="section-bg-four">
               <h2 className="bg-four-text">
-              Nossas áreas de atuação
+              Nossas cultura
               </h2>
-              <a href="#saiba-mais" className="saiba-mais-button button-4">
+              <Link to="/nossa-cultura" className="saiba-mais-button button-4">
               Saiba Mais
-              </a>
+              </Link>
             </section>
 
         <section className="section-bg-five">

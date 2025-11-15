@@ -1,0 +1,73 @@
+.marcas-hero-background {
+  width: 1366px;
+  height: 548px; 
+  margin: 0 auto;
+  position: relative;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url('../assets/marcas-bkg.png'); 
+  background-size: 1366px 548px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.marcas-title{
+ position: absolute;
+  z-index: 10;
+  top: 145px; 
+  left: 386px; 
+  font-family: 'Aller', sans-serif;
+  font-weight: 600; 
+  font-size: 96px; 
+  color: #ffffff;
+}
+
+.marcas-content-section {
+  width: 1366px; 
+  margin: 0 auto; 
+  padding-bottom: 100px;
+}
+
+.marca-logo {
+  display: block; 
+  margin-left: 194px; 
+}
+
+.marca-text {
+  margin-left: 194px;
+  margin-right: 194px;
+  box-sizing: border-box; 
+  font-family: 'Aller', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4D555A;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.logo-magazine {
+  margin-top: 139px; 
+  width: 160px;
+  height: 51px;
+}
+.text-magazine {
+  margin-top: 21px; 
+}
+
+.logo-nestsafe {
+  margin-top: 60px; 
+  width: 196px;
+  height: 41px;
+}
+.text-nestsafe {
+  margin-top: 21px; 
+}
+
+.logo-bbranding {
+  margin-top: 60px;
+  width: 209px;
+  height: 51px;
+}
+.text-bbranding {
+  margin-top: 21px; 
+}
