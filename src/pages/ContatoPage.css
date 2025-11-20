@@ -1,6 +1,31 @@
 .contato-section{
     width: 1366px;
-    height: 548px; 
+    height: 436px; 
     margin: 0 auto;
     position: relative; 
+}
+
+.contato-text1{
+    position: absolute;
+    font-family: 'Aller', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #4D555A;
+    margin: 0; 
+    text-align: left;
+    top: 137px;
+    left: 115px
+
+}
+
+.contato-text2{
+    position: absolute;
+    font-family: 'Aller', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #4D555A;
+    margin: 0; 
+    text-align: left;
+    top: 214px;
+    left: 115px
 }

@@ -1,13 +1,17 @@
-import React from 'react';
-import './Header.css';
-import logoBallke from '../../assets/logo-ballke.png';
-import { Link } from 'react-router-dom'; 
+import React from "react";
+import "./Header.css";
+import logoBallke from "../../assets/logo-ballke.png";
+import { Link, useLocation } from "react-router-dom";
 
 function Header() {
+  const location = useLocation();
+  const isContactPage = location.pathname === "/contato";
+  const headerClasses = isContactPage
+    ? "site-header dark-background"
+    : "site-header";
   return (
-    <header className="site-header">
+    <header className={headerClasses}>
       <div className="header-container">
-      
         <div className="header-left">
           <Link to="/">
             <img src={logoBallke} alt="Logo do Grupo Ballke" className="logo" />
@@ -17,10 +21,15 @@ function Header() {
         <div className="header-center">
           <nav>
             <ul>
-              
-              <li><Link to="/marcas">Marcas</Link></li> 
-              <li><Link to="/quem-somos">Sobre nós</Link></li>
-              <li><Link to="/carreiras">Carreiras</Link></li>
+              <li>
+                <Link to="/marcas">Marcas</Link>
+              </li>
+              <li>
+                <Link to="/quem-somos">Sobre nós</Link>
+              </li>
+              <li>
+                <Link to="/carreiras">Carreiras</Link>
+              </li>
             </ul>
           </nav>
         </div>
@@ -30,7 +39,6 @@ function Header() {
             Contato
           </Link>
         </div>
-
       </div>
     </header>
   );
