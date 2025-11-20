@@ -9,6 +9,7 @@ import NossaCulturaPage from "./pages/NossaCulturaPage";
 import MarcasPage from "./pages/MarcasPage";
 import CarreirasPage from "./pages/CarreirasPage";
 import ContatoPage from "./pages/ContatoPage";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/carreiras" element={<CarreirasPage />} />
         <Route path="/contato" element={<ContatoPage />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

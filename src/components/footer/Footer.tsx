@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.css";
 
 export default function Footer() {
-  <footer className="footer-container">
+  return <footer className="footer-container">
     <div className="footer-bar-gray">
       <div className="footer-social-group">
         <a
@@ -11,7 +11,7 @@ export default function Footer() {
           rel="noopener noreferrer"
         >
           <img
-            src={require("./assets/lg_facebook.png")}
+            src={require("../../assets/lg_facebook.png")}
             alt="Facebook"
             className="footer-social-icon"
           />
@@ -22,7 +22,7 @@ export default function Footer() {
           rel="noopener noreferrer"
         >
           <img
-            src={require("./assets/lg_instagram.png")}
+            src={require("../../assets/lg_instagram.png")}
             alt="Instagram"
             className="footer-social-icon"
           />
@@ -33,7 +33,7 @@ export default function Footer() {
           rel="noopener noreferrer"
         >
           <img
-            src={require("./assets/lg_linkedin.png")}
+            src={require("../../assets/lg_linkedin.png")}
             alt="LinkedIn"
             className="footer-social-icon"
           />
@@ -54,7 +54,7 @@ export default function Footer() {
 
     <div className="footer-bar-white">
       <img
-        src={require("./assets/logo_ballke_escuro.png")}
+        src={require("../../assets/logo_ballke_escuro.png")}
         alt="Logo Grupo Ballke"
         className="footer-logo"
       />
