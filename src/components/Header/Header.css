@@ -26,7 +26,6 @@ body {
   z-index: 100;
 }
 
-
 .header-container {
   max-width: 937px; 
   width: 100%; 
@@ -36,8 +35,6 @@ body {
   align-items: center;
   border-bottom: 2px solid rgba(255, 255, 255, 0.8);
 }
-
-
 
 .logo {
   width: 88px;
