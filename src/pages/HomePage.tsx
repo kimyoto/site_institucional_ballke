@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
-    <main  className='sections-container'>
+    <main className="sections-container">
       <section className="hero-section">
         <h2 className="text-top">
           Seja bem-vindo ao
@@ -14,35 +14,42 @@ function HomePage() {
       </section>
 
       <section className="section-bg-two">
-        <h2 className="text-bg2">
-          Confira nossas marcas e descubra qual é a ideal para você.
-        </h2>
-        <a
-          href="https://www.magazinemedica.com.br"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hero-button button-1"
-        >
-          Visitar site
-        </a>
+        <div className="sub-section-container">
+          <h2 className="text-bg2">
+            Confira nossas marcas e descubra qual é a ideal para você.
+          </h2>
+        </div>
 
-        <a href="#link-marca-2" className="hero-button button-2">
-          Visitar site
-        </a>
-
-        <img
-          src={require("../assets/nestsafe_banco.png")}
-          alt="Logo Nestsafe"
-          className="hero-image-logo logo-1"
-        />
-
-        {}
-        <img
-          src={require("../assets/magazine_branco.png")}
-          alt="Logo Magazine Médica"
-          className="hero-image-logo logo-2"
-        />
+        <div className="sub-section-container">
+          <div className="magazine-medica-buttons">
+            <img
+              src={require("../assets/magazine_branco.png")}
+              alt="Logo Magazine Médica"
+              className="hero-image-logo logo-2"
+            />
+            <a
+              href="https://www.magazinemedica.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-button"
+            >
+              Visitar site
+            </a>
+          </div>
+          <div className="nestsafe-buttons">
+            <img
+              src={require("../assets/nestsafe_banco.png")}
+              alt="Logo Nestsafe"
+              className="hero-image-logo logo-1"
+            />
+            <a href="#link-marca-2" className="hero-button">
+              Visitar site
+            </a>
+            
+          </div>
+        </div>
       </section>
+      
       <section className="section-bg-three">
         <h2 className="bg-three-text">Nossa trajetória até aqui</h2>
 
