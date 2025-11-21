@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 
 function HomePage() {
   return (
-    <main>
+    <main  className='sections-container'>
       <section className="hero-section">
         <h2 className="text-top">
           Seja bem-vindo ao
           <br />
           Grupo Ballke!
         </h2>
+      </section>
 
+      <section className="section-bg-two">
         <h2 className="text-bg2">
           Confira nossas marcas e descubra qual é a ideal para você.
         </h2>
@@ -41,8 +43,6 @@ function HomePage() {
           className="hero-image-logo logo-2"
         />
       </section>
-
-      <section className="section-bg-two"></section>
       <section className="section-bg-three">
         <h2 className="bg-three-text">Nossa trajetória até aqui</h2>
 
