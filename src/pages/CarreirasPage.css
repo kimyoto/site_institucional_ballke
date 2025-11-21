@@ -1,21 +1,23 @@
+.section-container {
+  width: 100%; 
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
 .carreiras-hero-background {
-  width: 1366px;
-  height: 548px; 
-  margin: 0 auto;
-  position: relative; 
+  height: 548px;  
   background-image: 
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
     url('../assets/carreiras-bkg.png'); 
-  background-size: 1366px 548px; 
-  background-position: center center;
-  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
 }
 
 .carreiras-hero-title {
-  position: absolute;
-  z-index: 10;
-  top: 140px; 
-  left: 489px; 
   font-family: 'Aller', sans-serif;
   font-weight: 400; 
   font-size: 96px; 
@@ -23,8 +25,6 @@
 }
 
 .carreiras-text {
-  width: 1366px; 
-  margin: 0 auto; 
   padding: 63px 0 68px 0;
 }
 
@@ -41,8 +41,6 @@
 }
 
 .vagas-hero{
-    width: 1366px; 
-    margin: 0 auto; 
     padding: 0px 0 0px 0;
 }
 
@@ -55,8 +53,6 @@
 }
 
 .vagas-lista-container {
-  width: 1366px; 
-  margin: 0 auto;
 padding: 0 360px 0 269px;
   box-sizing: border-box;
   margin-top: 0px;
@@ -64,7 +60,6 @@ padding: 0 360px 0 269px;
 }
 
 .vaga-item {
-  position: relative; 
   height: 50px; 
   font-family: 'Aller', sans-serif;
   font-size: 14px;
@@ -79,7 +74,6 @@ padding: 0 360px 0 269px;
 .vaga-titulo,
 .vaga-local,
 .vaga-tipo {
-  position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
