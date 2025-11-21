@@ -1,21 +1,21 @@
-.quemsomos-hero-background {
-  width: 1366px;
-  height: 549px; 
-  margin: 0 auto;
-  position: relative;
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-    url('../assets/topoquemsomos.png');
+.section-container {
+  width: 100%; 
   background-size: cover; 
   background-position: center center;
   background-repeat: no-repeat;
+  display: flex;
+}
+.quemsomos-hero-background {
+  height: 549px; 
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url('../assets/topoquemsomos.png');
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .text-topo-quemsomos {
-  position: absolute;
-  z-index: 10;
-  top: 137px;
-  left: 397px;
   font-family: 'Aller', sans-serif;
   font-weight: 400; 
   font-size: 96px;
@@ -26,19 +26,11 @@
 
 .text-images-quemsomos {
   height: 400px;
-  width: 1366px;
-  margin: 0 auto;
-  padding: 80px 0; 
-  position: relative;
-  text-align: center; 
+  padding-left: 250px;
+  padding-right: 250px;
 }
 
 .quemsomos-grupoballke{
-  position: absolute;
-  z-index: 10;
-  top: 15px;
-  left: 191px;
-  right: 963px; 
   font-family: 'Aller', sans-serif;
   font-size: 36px;
   font-weight: 700;
@@ -47,38 +39,7 @@
   line-height: 1.5; 
 }
 
-.quemsomos-text-1{
-position: absolute;
-  z-index: 10;
-  top: 96px;
-  left: 191px;
-  right: 190px; 
-  font-family: 'Aller', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #4D555A;
-  text-align: justify;
-  line-height: 1.5; 
-}
-.quemsomos-text-2{
-position: absolute;
-  z-index: 10;
-  top: 185px;
-  left: 191px;
-  right: 190px; 
-  font-family: 'Aller', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #4D555A;
-  text-align: justify;
-  line-height: 1.5; 
-}
-.quemsomos-text-3{
-position: absolute;
-  z-index: 10;
-  top: 252px;
-  left: 191px;
-  right: 190px; 
+.quemsomos-text{
   font-family: 'Aller', sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -87,24 +48,33 @@ position: absolute;
   line-height: 1.5; 
 }
 
+
 .quemsomos-images {
-  width: 993px;
-  height: 395px; 
-  margin: 0 auto;
-  position: relative;
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-    url('../assets/quemsomos1.png');
-  background-size: cover; 
-  background-position: center center;
-  background-repeat: no-repeat;
+  width: 100%;
+  padding-left: 250px;
+  padding-right: 250px;
+}
+
+.quemsomos-section-imgs {
+  width: 100%;
+  object-fit: cover; 
+}
+
+.quemsomos-duas-colunas {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+}
+
+.coluna {
+  flex: 1
 }
 
 .gray-bar-atuacao {
-  width: 993px;
+  width: 100%;
   height: 48px;
   background-color: #D9D9D93B;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -118,36 +88,6 @@ position: absolute;
   font-weight: 700; 
   color: #4D555A;  
   margin: 0;
-}
-
-.quemsomos-two-column-section {
-  width: 1366px; 
-  height: 450px; 
-  margin: 0 auto;
-  position: relative;
-}
-
-.column-left-block {
-  position: absolute;
-  top: 0;
-  left: 189px; 
-  width: 466px; 
-  z-index: 10;
-}
-
-.column-right-block {
-  position: absolute;
-  top: 0;
-  right: 184px; 
-  width: 466px; 
-  z-index: 10;
-}
-
-.column-left-block img,
-.column-right-block img {
-  width: 100%; 
-  height: auto; 
-  display: block; 
 }
 
 .image-gray-bar {
@@ -169,20 +109,17 @@ position: absolute;
 }
 
 .parceiros-section {
-  width: 1366px; 
-  margin: 0 auto;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 50px;
   margin-bottom: 140px; 
-  position: relative;
-  height: 178px; 
+  row-gap: 100px;
+  padding-left: 250px;
+  padding-right: 250px;
 }
 
-
 .parceiros-title {
-  position: absolute;
-  z-index: 10;
-  top: 0; 
-  left: 577px;
   font-family: 'Aller', sans-serif;
   font-size: 36px;
   font-weight: 700;
@@ -191,28 +128,18 @@ position: absolute;
   white-space: nowrap;
 }
 
+.logos-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 86px;
+  padding-left: 250px;
+  padding-right: 250px;
+}
 
 .parceiros-logo {
-  position: absolute;
-  z-index: 10;
-  top: 100px; 
-}
-
-
-.logo-meta {
-  left: 189px; 
-  width: 273px;
-  height: 55px;
-}
-
-.logo-google {
-  left: 548px; 
-  width: 246px;
-  height: 83px;
-}
-
-.logo-optidata {
-  right: 185px; 
-  width: 301px;
-  height: 76px;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
