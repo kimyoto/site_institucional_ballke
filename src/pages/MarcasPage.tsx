@@ -4,11 +4,11 @@ import "./MarcasPage.css";
 function MarcasPage() {
   return (
     <>
-      <section className="marcas-hero-background">
+      <section className="section-container marcas-hero-background">
         <h2 className="marcas-title">Nossas Marcas</h2>
       </section>
 
-      <section className="marcas-content-section">
+      <section className="section-container marcas-content-section">
         <img
           src={require("../assets/magazinecolorido.png")}
           alt="Magazine Médica"

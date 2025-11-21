@@ -1,21 +1,23 @@
-.marcas-hero-background {
-  width: 1366px;
-  height: 548px; 
-  margin: 0 auto;
+.section-container {
+  width: 100%; 
+  background-size: cover; 
+  background-position: center center;
+  background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.marcas-hero-background {
+  height: 548px; 
   background-image: 
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
     url('../assets/marcas-bkg.png'); 
-  background-size: 1366px 548px;
-  background-position: center center;
-  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
 }
 
 .marcas-title{
- position: absolute;
-  z-index: 10;
-  top: 145px; 
-  left: 386px; 
   font-family: 'Aller', sans-serif;
   font-weight: 600; 
   font-size: 96px; 
@@ -23,8 +25,6 @@
 }
 
 .marcas-content-section {
-  width: 1366px; 
-  margin: 0 auto; 
   padding-bottom: 100px;
 }
 
