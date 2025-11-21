@@ -4,11 +4,11 @@ import "./NossaCulturaPage.css";
 function NossaCulturaPage() {
   return (
     <>
-      <section className="nossa-cultura-hero-background">
+      <section className="section-container nossa-cultura-hero-background">
         <h2 className="nossa-cultura-hero-title">Nossa Cultura</h2>
       </section>
 
-      <section className="cultura-content-section">
+      <section className="section-container cultura-content-section">
         <h2 className="cultura-subtitle">Missão</h2>
         <p className="cultura-text">
           Ser um catalisador de negócios nas áreas da saúde e inovação, apoiando

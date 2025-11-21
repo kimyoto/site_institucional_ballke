@@ -1,23 +1,23 @@
-.nossa-cultura-hero-background {
-  width: 1366px;
-  height: 548px; 
-  position: relative; 
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), 
-    url('../assets/nossacultura-topobkg.png'); 
+.section-container {
+  width: 100%; 
   background-size: cover; 
   background-position: center center;
   background-repeat: no-repeat;
-  margin: 0 auto;
-
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
+.nossa-cultura-hero-background {
+  height: 548px; 
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), 
+    url('../assets/nossacultura-topobkg.png'); 
+  justify-content: center;
+  align-items: center;
+}
 
 .nossa-cultura-hero-title {
-  position: absolute;
-  z-index: 10;
-  top: 125px; 
-  left: 386px; 
   font-family: 'Aller', sans-serif;
   font-weight: 400; 
   font-size: 96px; 
@@ -25,16 +25,10 @@
   white-space: nowrap; 
 }
 
-.cultura-content-section {
-  width: 1366px; 
-  margin: 0 auto;  
-  
+.cultura-content-section {  
   padding-top: 91px;     
-  padding-left: 299px;   
-  padding-right: 343px;  
-  
-  box-sizing: border-box; 
-  
+  padding-left: 250px;   
+  padding-right: 250px;    
   padding-bottom: 100px;
 }
 
@@ -79,16 +73,13 @@ h2.cultura-subtitle:last-of-type {
   font-size: 18px;
   font-weight: 400;
   color: #4D555A;
-  list-style: none; 
-  padding-left: 0;
-  margin: 0;
+  list-style: disc; 
   margin-top: 43px; 
+  margin-left: -15px;
 }
 
 .cultura-values-list li {
   margin-bottom: 40px; 
-  padding-left: 20px; 
-  position: relative;
 }
 
 .cultura-values-list li::before {
@@ -97,7 +88,6 @@ h2.cultura-subtitle:last-of-type {
   height: 8px;
   background-color: #4D555A; 
   border-radius: 50%; 
-  position: absolute;
   left: 0;
   top: 8px; 
 }
