@@ -1,0 +1,32 @@
+.botao-pagina-container {
+    border-radius: 12px;
+    border: 1px solid #4d555a;
+    height: 4vh;
+      cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  padding: 1rem 2rem 1rem 2rem;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.botao-pagina-container:hover, .botao-pagina-container.selected  {
+  background-color: #ECECEC;
+  color: #ffffff;
+}
+
+.botao-pagina-text {
+  font-family: "Aller", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4d555a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
