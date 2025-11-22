@@ -13,3 +13,14 @@
   color: #4d555a;
   padding-left: 8px;
 }
+
+.campo-de-texto-container input:disabled,
+.campo-de-texto-container textarea:disabled,
+.campo-de-texto-container select:disabled {
+  background-color: #f5f7f9;
+  color: #9aa0a6;          
+  border: 1px solid #e0e6eb;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 1; 
+}

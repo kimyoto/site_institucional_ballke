@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CarreirasPage.css";
 import CampoDeTexto from "../components/campo-de-texto/CampoDeTexto";
+import BotaoPagina from "../components/botao-pagina/BotaoPagina";
 
 function CarreirasPage() {
+  const [desabilitarCampoDescritivo, setDesabilitarCampoDescritivo] = useState(true); 
+ 
   return (
     <>
       <section className="section-container carreiras-hero-background">
@@ -38,6 +41,12 @@ function CarreirasPage() {
           <CampoDeTexto placeholder="Para qual área ou cargo voce se deseja candidatar?"/>
         </div>
       </form>
+      <text className="carreiras-text1">Você tem experiência na área ou cargo desejada?</text>
+      <div className="button-container">
+        <BotaoPagina texto="Sim" onClick={() => setDesabilitarCampoDescritivo(false)}/>
+        <BotaoPagina texto="Não" onClick={() => setDesabilitarCampoDescritivo(true)}/>
+        <CampoDeTexto placeholder="Deixar descritivo" desabilitar={desabilitarCampoDescritivo}/> 
+      </div>
     </section>
 
       <section className="section-container vagas-hero">
