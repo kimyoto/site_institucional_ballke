@@ -26,23 +26,25 @@ function CarreirasPage() {
       </section>
 
       <section className="section-container vagas-lista-container">
-        <div className="vaga-item">
-          <span className="vaga-titulo">Estoquista</span>
-          <span className="vaga-local">Concórdia - SC</span>
-          <span className="vaga-tipo">Efetivo</span>
-        </div>
-
-        <div className="vaga-item">
-          <span className="vaga-titulo">Auxiliar de limpeza</span>
-          <span className="vaga-local">Concórdia - SC</span>
-          <span className="vaga-tipo">Temporário</span>
-        </div>
-
-        <div className="vaga-item">
-          <span className="vaga-titulo">Tecnologia da Informação (TI)</span>
-          <span className="vaga-local">Chapecó - SC</span>
-          <span className="vaga-tipo">Efetivo</span>
-        </div>
+        <table className='vagas-table'>
+          <tbody>
+            <tr>
+              <td>Estoquista</td>
+              <td>Concórdia - SC</td>
+              <td>Efetivo</td>
+            </tr>
+            <tr>
+              <td>Auxiliar de limpeza</td>
+              <td>Concórdia - SC</td>
+              <td>Temporário</td>
+            </tr>
+            <tr>
+              <td>Tecnologia da Informação (TI)</td>
+              <td>Chapecó - SC</td>
+              <td>Efetivo</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </>
   );

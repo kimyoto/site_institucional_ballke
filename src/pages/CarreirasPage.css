@@ -1,6 +1,6 @@
 .section-container {
-  width: 100%; 
-  background-size: cover; 
+  width: 100%;
+  background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
@@ -9,18 +9,18 @@
 }
 
 .carreiras-hero-background {
-  height: 548px;  
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-    url('../assets/carreiras-bkg.png'); 
+  height: 548px;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/carreiras-bkg.png");
   align-items: center;
   justify-content: center;
 }
 
 .carreiras-hero-title {
-  font-family: 'Aller', sans-serif;
-  font-weight: 400; 
-  font-size: 96px; 
+  font-family: "Aller", sans-serif;
+  font-weight: 400;
+  font-size: 96px;
   color: #ffffff;
 }
 
@@ -28,70 +28,48 @@
   padding: 63px 0 68px 0;
 }
 
-.carreiras-text1{
-    margin-left: 270px;
-    margin-right: 270px;
-    box-sizing: border-box; 
-    font-family: 'Aller', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #4D555A;
-    text-align: justify;
-    line-height: 1.5;   
+.carreiras-text1 {
+  margin-left: 250px;
+  margin-right: 250px;
+  box-sizing: border-box;
+  font-family: "Aller", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #4d555a;
+  text-align: justify;
+  line-height: 1.5;
 }
 
-.vagas-hero{
-    padding: 0px 0 0px 0;
+.vagas-hero {
+  padding: 0px 0 0px 0;
 }
 
-.vagas{
-    margin-left: 270px;
-    font-size: 32px;
-    font-family: 'Aller', sans-serif;
-    color: #4D555A;
-    font-weight: 600;
+.vagas {
+  margin-left: 250px;
+  font-size: 32px;
+  font-family: "Aller", sans-serif;
+  color: #4d555a;
+  font-weight: 600;
 }
 
 .vagas-lista-container {
-padding: 0 360px 0 269px;
-  box-sizing: border-box;
+  padding-left: 250px;
+  padding-right: 250px;
   margin-top: 0px;
   margin-bottom: 80px;
 }
 
-.vaga-item {
-  height: 50px; 
-  font-family: 'Aller', sans-serif;
+.vagas-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.vagas-table tr {
+  font-family: "Aller", sans-serif;
   font-size: 14px;
-  color: #4D555A;
-  border-bottom: 1px solid #e0e0e0;
+  color: #4d555a;
+  height: 50px;
+  border-bottom: 1px solid #d9d9d9;
 }
 
-.vaga-item:first-child {
-  border-top: none;
-}
-
-.vaga-titulo,
-.vaga-local,
-.vaga-tipo {
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-
-.vaga-titulo {
-  left: 0;
-  text-align: left;
-}
-
-
-.vaga-local {
-    left: 303px; 
-    text-align: left;
-}
-
-
-.vaga-tipo {
-  right: 46px; 
-  text-align: right;
-}
