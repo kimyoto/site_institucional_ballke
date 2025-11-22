@@ -6,6 +6,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .carreiras-hero-background {
@@ -25,12 +27,10 @@
 }
 
 .carreiras-text {
-  padding: 63px 0 68px 0;
+  margin-top: 5%;
 }
 
 .carreiras-text1 {
-  margin-left: 250px;
-  margin-right: 250px;
   box-sizing: border-box;
   font-family: "Aller", sans-serif;
   font-size: 16px;
@@ -40,12 +40,14 @@
   line-height: 1.5;
 }
 
-.vagas-hero {
-  padding: 0px 0 0px 0;
+.vagas {
+  font-size: 32px;
+  font-family: "Aller", sans-serif;
+  color: #4d555a;
+  font-weight: 600;
 }
 
-.vagas {
-  margin-left: 250px;
+.informacoes {
   font-size: 32px;
   font-family: "Aller", sans-serif;
   color: #4d555a;
@@ -53,8 +55,6 @@
 }
 
 .vagas-lista-container {
-  padding-left: 250px;
-  padding-right: 250px;
   margin-top: 0px;
   margin-bottom: 80px;
 }
@@ -73,3 +73,32 @@
   border-bottom: 1px solid #d9d9d9;
 }
 
+.informacoes-pessoais-container {
+  align-items: center;
+}
+
+.form-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > div:not(.multiplos-campos) {
+  display: flex;
+  margin-bottom: 1%;
+  gap: 1%;
+  width: 100%;
+  flex-grow: 1;
+}
+
+.multiplos-campos {
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  gap: 1%;
+  margin-bottom: 1%;
+  width: 100%;
+  align-items: center;
+}
+.multiplos-campos > .campo-de-texto-container {
+  width: 100%;
+}

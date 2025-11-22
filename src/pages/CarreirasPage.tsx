@@ -1,5 +1,6 @@
 import React from "react";
 import "./CarreirasPage.css";
+import CampoDeTexto from "../components/campo-de-texto/CampoDeTexto";
 
 function CarreirasPage() {
   return (
@@ -20,6 +21,24 @@ function CarreirasPage() {
           oportunidades e venha fazer a diferença!
         </h2>
       </section>
+
+
+    <section className="section-container informacoes-pessoais-container" >
+      <h2 className="informacoes">Informações pessoais</h2>
+      <form className="form-container"> 
+        <div className="um-campo">
+          <CampoDeTexto placeholder="Nome completo"/>
+        </div>
+        <div className='multiplos-campos'>
+          <CampoDeTexto placeholder="Email"/>
+          <CampoDeTexto placeholder="Idade"/>
+          <CampoDeTexto placeholder="Telefone de contato"/>
+        </div>
+        <div className="um-campo">
+          <CampoDeTexto placeholder="Para qual área ou cargo voce se deseja candidatar?"/>
+        </div>
+      </form>
+    </section>
 
       <section className="section-container vagas-hero">
         <h2 className="vagas">Vagas</h2>
