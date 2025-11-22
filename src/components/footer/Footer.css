@@ -7,7 +7,6 @@
 .footer-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 100%;
 }
 
@@ -16,17 +15,14 @@
   height: 46px;
   background-color: #D9D9D93B;
   display: flex;
-  padding-left: 58px;
   position: relative;
 }
 
 .footer-links-group {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 1vw;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 15vw;
+  gap: 10vw;
   width: 80%;
 }
 
@@ -50,6 +46,8 @@
   width: 20%;
   object-fit: contain;
   position: relative;
+    padding-left: 58px;
+
 }
 
 .footer-social-icon {

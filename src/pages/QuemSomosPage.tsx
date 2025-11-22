@@ -56,7 +56,7 @@ function QuemSomosPage() {
           </div>
           
           <div className="coluna">
-            <Link to="/nossa-cultura" className="link-block-wrapper">
+            <Link to="/nossa-cultura" className="link-block-wrapper" >
               <img
                 src={require("../assets/quemsomos3.png")}
                 alt="Nossa Cultura"
