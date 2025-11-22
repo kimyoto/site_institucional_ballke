@@ -1,0 +1,15 @@
+.campo-de-texto-container {
+  width: 100%;
+}
+
+.campo-de-texto-container input {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #4d555a;
+  height: 4vh;
+  font-family: "Aller", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4d555a;
+  padding-left: 8px;
+}
