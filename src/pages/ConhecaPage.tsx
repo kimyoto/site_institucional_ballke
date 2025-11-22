@@ -36,13 +36,12 @@ function ConhecaPage() {
           estratégicas, tecnológicas e sustentáveis que gerem impacto real — na
           saúde e além dela.
         </h2>
-
-        <img
+      </section>
+              <img
           src={require("../assets/lona.png")}
           alt="Imagem Lona Conheça"
           className="conheca-lona-image"
         />
-      </section>
     </>
   );
 }

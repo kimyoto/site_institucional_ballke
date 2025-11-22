@@ -19,8 +19,6 @@
 
 .text-images-quemsomos {
   height: 400px;
-  padding-left: 250px;
-  padding-right: 250px;
 }
 
 .quemsomos-grupoballke{
@@ -44,8 +42,6 @@
 
 .quemsomos-images {
   width: 100%;
-  padding-left: 250px;
-  padding-right: 250px;
 }
 
 .quemsomos-section-imgs {
@@ -110,8 +106,6 @@
   margin-top: 50px;
   margin-bottom: 140px; 
   row-gap: 100px;
-  padding-left: 250px;
-  padding-right: 250px;
 }
 
 .parceiros-title {
@@ -129,8 +123,6 @@
   align-items: center;
   justify-content: center;
   gap: 86px;
-  padding-left: 250px;
-  padding-right: 250px;
 }
 
 .parceiros-logo {
