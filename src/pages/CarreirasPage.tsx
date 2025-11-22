@@ -47,6 +47,11 @@ function CarreirasPage() {
         <BotaoPagina texto="Não" onClick={() => setDesabilitarCampoDescritivo(true)}/>
         <CampoDeTexto placeholder="Deixar descritivo" desabilitar={desabilitarCampoDescritivo}/> 
       </div>
+      <div className="button-enviar-container">
+        <BotaoPagina
+          texto={<text>Faça upload do seu curriculo <br/>(formato PDF ou Word)</text>}
+        />
+      </div>
     </section>
 
       <section className="section-container vagas-hero">
