@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import Header from "./components/header/Header";
+import Header from "./components/Header/Header";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ConhecaPage from "./pages/ConhecaPage";
