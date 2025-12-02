@@ -17,10 +17,16 @@
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   position: relative;
+  flex-direction: column !important;
+  height: auto !important;
+  min-height: 100vh !important; /* Garante que ocupe a tela toda */
+  padding-top: 100px !important; /* Espaço para não ficar atrás do menu */
+  padding-bottom: 50px !important;
+
 }
 .section-bg-two {
   /*Segunda imagem da tela inical*/
@@ -87,7 +93,7 @@
   left: 63px;
   font-family: "Aller", sans-serif;
   color: #ffffff;
-  font-size: 55px;
+  font-size: 70px;
   font-weight: 600;
 }
 
@@ -101,7 +107,16 @@
   font-size: 32px;
   white-space: nowrap;
   line-height: 1, 4;
-  z-index: 10;
+  z-index: 10;position: relative !important;
+  inset: auto !important; /* Reseta top/left/right/bottom */
+  transform: none !important;
+    
+  width: 90% !important; /* Margem de segurança lateral */
+  margin: 0 auto 30px auto !important; /* Espaço embaixo do texto */
+    
+  white-space: normal !important; /* Permite o texto quebrar em várias linhas */
+  text-align: center !important;
+  font-size: 24px !important; /* Fonte menor para caber */
 }
 
 .hero-button {

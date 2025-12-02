@@ -6,5 +6,6 @@ export default function BotaoPagina(props: { texto: string | ReactNode, onClick?
     <button className="botao-pagina-container" onClick={props.onClick}>
       {typeof props.texto === 'string' ? <text>{props.texto}</text> : props.texto}
     </button>
-  );
+  ); 
 }
+

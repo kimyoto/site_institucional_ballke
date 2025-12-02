@@ -67,7 +67,7 @@ function HomePage() {
 
       <section className="section-bg-five">
         <h2 className="bg-five-text">Trabalhe Conosco</h2>
-        <a href="#vagas" className="vagas-button button-5">
+        <a href="carreiras" className="vagas-button button-5">
           Vagas Disponíveis
         </a>
       </section>

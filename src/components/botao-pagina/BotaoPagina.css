@@ -16,6 +16,7 @@
 .botao-pagina-container:hover, .botao-pagina-container.selected  {
   background-color: #ECECEC;
   color: #ffffff;
+  
 }
 
 text {

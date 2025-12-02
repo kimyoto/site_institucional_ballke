@@ -1,3 +1,17 @@
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root,
+.App {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .App {
   text-align: left;
 }
@@ -14,7 +28,660 @@
   padding-right: 15%;
 }
 
-
 .link-block-wrapper {
   text-decoration: none;
+}
+@media (max-width: 768px) {
+  html,
+  body,
+  #root,
+  .App {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative;
+  }
+
+  .site-header,
+  .header-container {
+    position: relative !important; 
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    flex-direction: column !important;
+    background-color: #1a1a1a !important; 
+    padding: 20px !important;
+  }
+
+  .header-center nav ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  
+  .hero-section,
+  .section-bg-two,
+  .section-bg-three,
+  .section-bg-four,
+  .section-bg-five,
+  .conheca-hero-background,
+  .conheca-main-background,
+  .quemsomos-hero-background,
+  .marcas-hero-background,
+  .carreiras-hero-background,
+  .nossa-cultura-hero-background {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 400px; 
+
+    background-size: cover !important;
+    background-position: center !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    padding: 60px 20px !important;
+    margin: 0 !important;
+  }
+
+  .quemsomos-images {
+    height: 200px !important;
+    border-radius: 0 !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+  }
+
+  .text-bg2,
+  .bg-three-text,
+  .bg-four-text,
+  .bg-five-text,
+  .topo-text-1,
+  .conheca-text-1,
+  .text-topo-quemsomos,
+  .quemsomos-grupoballke,
+  .text-top,
+  .carreiras-hero-title,
+  .carreiras-text1,
+  .nossa-cultura-hero-title,
+  .cultura-subtitle,
+  .cultura-text,
+  .marcas-title,
+  .marca-text {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px 0 !important;
+
+    font-size: 24px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    height: auto !important;
+  }
+
+  .carreiras-text1,
+  .quemsomos-text,
+  .quemsomos-text-1,
+  .quemsomos-text-2,
+  .quemsomos-text-3,
+  .cultura-text,
+  .marca-text {
+    font-size: 16px !important;
+    text-align: justify !important;
+    margin: 10px 0 !important;
+  }
+
+  .hero-button,
+  .conheca-button,
+  .saiba-mais-button,
+  .vagas-button,
+  .button-1,
+  .button-2,
+  .button-3,
+  .button-4,
+  .button-5 {
+    position: relative !important;
+    inset: auto !important;
+    margin: 15px auto !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .hero-image-logo,
+  .conheca-lona-image,
+  .parceiros-logo,
+  .marca-logo,
+  .logo-1,
+  .logo-2 {
+    position: relative !important;
+    inset: auto !important;
+
+    width: auto !important;
+    max-width: 80% !important;
+    height: auto !important;
+    margin: 20px auto !important;
+    display: block !important;
+  }
+
+  .quemsomos-two-column-section,
+  .parceiros-section,
+  .marcas-content-section,
+  .cultura-content-section,
+  .carreiras-text,
+  .text-images-quemsomos {
+    width: 100% !important;
+    height: auto !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 40px !important;
+  }
+
+  .column-left-block,
+  .column-right-block {
+    position: relative !important;
+    inset: auto !important;
+    width: 90% !important;
+    max-width: 400px !important;
+    height: auto !important;
+    margin: 0 auto 30px auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .column-left-block img,
+  .column-right-block img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  .image-gray-bar,
+  .gray-bar-atuacao {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    background-color: #d9d9d93b !important;
+  }
+
+  .text-images-1,
+  .image-gray-bar h3 {
+    font-size: 18px !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .parceiros-section {
+    margin-top: 80px !important;
+    margin-bottom: 50px !important;
+    align-items: center !important;
+  }
+
+  .parceiros-title {
+    position: relative !important;
+    inset: auto !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+
+  .logos-container {
+    margin-top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  .vagas-lista-container {
+    width: 100% !important;
+    padding: 20px !important;
+    margin-top: 20px !important;
+  }
+
+  .vaga-item {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 20px 0 !important;
+    text-align: center !important;
+    gap: 10px;
+  }
+
+  .vaga-titulo,
+  .vaga-local,
+  .vaga-tipo {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    text-align: center !important;
+  }
+
+  .footer-container,
+  .footer-bar-gray,
+  .footer-bar-white {
+    width: 100% !important;
+    height: auto !important;
+    flex-direction: column !important;
+    padding: 20px !important;
+    text-align: center;
+  }
+
+  .footer-links-group,
+  .footer-social-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 15px !important;
+    padding: 0 !important;
+  }
+
+  .footer-link,
+  .link-contato,
+  .link-servicos,
+  .link-carreira {
+    position: relative !important;
+    inset: auto !important;
+    margin: 5px 0;
+  }
+
+  .footer-logo {
+    position: relative !important;
+    inset: auto !important;
+    margin: 0 auto !important;
+  }
+}
+@media (max-width: 768px) {
+  html,
+  body,
+  #root,
+  .App {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    position: relative;
+  }
+
+  .site-header,
+  .header-container {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    flex-direction: column !important;
+    background-color: #1a1a1a !important;
+    padding: 20px !important;
+  }
+
+  .header-center nav ul {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+  }
+
+  .hero-section,
+  .section-bg-two,
+  .section-bg-three,
+  .section-bg-four,
+  .section-bg-five,
+  .conheca-hero-background,
+  .conheca-main-background,
+  .quemsomos-hero-background,
+  .marcas-hero-background,
+  .carreiras-hero-background,
+  .nossa-cultura-hero-background {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 400px;
+
+    background-size: cover !important;
+    background-position: center !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    padding: 60px 20px !important;
+    margin: 0 !important;
+  }
+
+  .quemsomos-images {
+    height: 200px !important;
+    border-radius: 0 !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+  }
+
+  .text-bg2,
+  .bg-three-text,
+  .bg-four-text,
+  .bg-five-text,
+  .topo-text-1,
+  .conheca-text-1,
+  .text-topo-quemsomos,
+  .quemsomos-grupoballke,
+  .text-top,
+  .carreiras-hero-title,
+  .carreiras-text1,
+  .nossa-cultura-hero-title,
+  .cultura-subtitle,
+  .cultura-text,
+  .marcas-title,
+  .marca-text {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px 0 !important;
+
+    font-size: 24px !important;
+    text-align: center !important;
+    white-space: normal !important;
+    height: auto !important;
+  }
+
+  .carreiras-text1,
+  .quemsomos-text,
+  .quemsomos-text-1,
+  .quemsomos-text-2,
+  .quemsomos-text-3,
+  .cultura-text,
+  .marca-text {
+    font-size: 16px !important;
+    text-align: justify !important;
+    margin: 10px 0 !important;
+  }
+
+  .hero-button,
+  .conheca-button,
+  .saiba-mais-button,
+  .vagas-button,
+  .button-1,
+  .button-2,
+  .button-3,
+  .button-4,
+  .button-5 {
+    position: relative !important;
+    inset: auto !important;
+    margin: 15px auto !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .hero-image-logo,
+  .conheca-lona-image,
+  .parceiros-logo,
+  .marca-logo,
+  .logo-1,
+  .logo-2 {
+    position: relative !important;
+    inset: auto !important;
+
+    width: auto !important;
+    max-width: 80% !important;
+    height: auto !important;
+    margin: 20px auto !important;
+    display: block !important;
+  }
+
+  .quemsomos-two-column-section,
+  .parceiros-section,
+  .marcas-content-section,
+  .cultura-content-section,
+  .carreiras-text,
+  .text-images-quemsomos {
+    width: 100% !important;
+    height: auto !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 40px !important;
+  }
+
+  .column-left-block,
+  .column-right-block {
+    position: relative !important;
+    inset: auto !important;
+    width: 90% !important;
+    max-width: 400px !important;
+    height: auto !important;
+    margin: 0 auto 30px auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .column-left-block img,
+  .column-right-block img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  .image-gray-bar,
+  .gray-bar-atuacao {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 50px !important;
+
+    margin: 0 !important;
+    padding: 10px !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    background-color: #d9d9d93b !important;
+  }
+
+  .text-images-1,
+  .image-gray-bar h3 {
+    font-size: 18px !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+
+  .parceiros-section {
+    margin-top: 80px !important;
+    margin-bottom: 50px !important;
+    align-items: center !important;
+  }
+
+  .parceiros-title {
+    position: relative !important;
+    inset: auto !important;
+    text-align: center !important;
+    width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+
+  .logos-container {
+    margin-top: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  .vagas-lista-container {
+    width: 100% !important;
+    padding: 20px !important;
+    margin-top: 20px !important;
+  }
+
+  .vaga-item {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 20px 0 !important;
+    text-align: center !important;
+    gap: 10px;
+  }
+
+  .vaga-titulo,
+  .vaga-local,
+  .vaga-tipo {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    text-align: center !important;
+  }
+
+  .footer-container,
+  .footer-bar-gray,
+  .footer-bar-white {
+    width: 100% !important;
+    height: auto !important;
+    flex-direction: column !important;
+    padding: 20px !important;
+    text-align: center;
+  }
+
+  .footer-links-group,
+  .footer-social-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 15px !important;
+    padding: 0 !important;
+  }
+
+  .footer-link,
+  .link-contato,
+  .link-servicos,
+  .link-carreira {
+    position: relative !important;
+    inset: auto !important;
+    margin: 5px 0;
+  }
+
+  .footer-logo {
+    position: relative !important;
+    inset: auto !important;
+    margin: 0 auto !important;
+  }
+  .quemsomos-images,
+  .column-left-block,
+  .column-right-block {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 40px auto !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+  }
+
+  .parceiros-section {
+    position: relative !important;
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+
+    margin-top: 120px !important;
+
+    margin-bottom: 50px !important;
+  }
+
+  .parceiros-title {
+    position: relative !important;
+    inset: auto !important;
+    text-align: center !important;
+    width: 100% !important;
+
+    margin-bottom: 10px !important;
+    margin-top: 0 !important;
+  }
+
+  .logos-container {
+    margin-top: 0 !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+
+  .hero-section {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    padding-top: 120px !important;
+    padding-bottom: 50px !important;
+  }
+
+  .text-top {
+    position: relative !important;
+    inset: auto !important;
+    text-align: center !important;
+    width: 90% !important;
+    margin: 0 auto 30px auto !important;
+
+    font-size: 42px !important;
+    line-height: 1.2 !important;
+  }
+
+  .text-bg2 {
+    position: relative !important;
+    inset: auto !important;
+    text-align: center !important;
+    width: 90% !important;
+    margin: 20px auto !important;
+
+    font-size: 26px !important;
+    white-space: normal !important;
+  }
+
+  .hero-button,
+  .button-1,
+  .button-2 {
+    position: relative !important;
+    inset: auto !important;
+    margin: 15px auto !important;
+    display: flex !important;
+    width: 220px !important;
+  }
+
+  .hero-image-logo,
+  .logo-1,
+  .logo-2 {
+    position: relative !important;
+    inset: auto !important;
+    margin: 20px auto !important;
+    width: 180px !important;
+    height: auto !important;
+    display: block !important;
+  }
 }
