@@ -1,8 +1,5 @@
 .nossa-cultura-hero-background {
   height: 548px; 
-  background-image: 
-    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)), 
-    url('../assets/nossacultura-topobkg.png'); 
   justify-content: center;
   align-items: center;
 }

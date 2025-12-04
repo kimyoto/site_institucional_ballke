@@ -18,19 +18,19 @@ interface ConhecaTimelineSection {
   timeline_img: string | null;
 }
 
-interface ConhecaPageDate {
+interface ConhecaPageData {
   hero_section: ConhecaHeroSection;
   content_section: ConhecaContentSection;
   timeline_section: ConhecaTimelineSection;
 }
 
 function ConhecaPage() {
-  const [content, setContent] = useState<ConhecaPageDate | null>(null);
+  const [content, setContent] = useState<ConhecaPageData | null>(null);
 
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/conheca")
       .then((response) => response.json())
-      .then((data: ConhecaPageDate) => setContent(data))
+      .then((data: ConhecaPageData) => setContent(data))
       .catch((error) => {
         console.error("Erro ao buscar dados da página Conheça:", error);
         setContent({
