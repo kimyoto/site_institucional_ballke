@@ -8,6 +8,7 @@ interface ConhecaHeroSection {
 }
 
 interface ConhecaContentSection {
+  content_bg_img: string | null;
   content_paragraph1: string | null;
   content_paragraph2: string | null;
   content_paragraph3: string | null;
@@ -39,6 +40,7 @@ function ConhecaPage() {
             hero_text_linha2: "até aqui.",
           },
           content_section: {
+            content_bg_img: require("../assets/conhecabkg.png"),
             content_paragraph1: "A história do Grupo Ballke é uma jornada construída com dedicação, inovação e compromisso com a excelência. Desde o seu início, buscamos transformar a saúde e o bem-estar das pessoas, oferecendo soluções eficientes e de alta qualidade nos segmentos em que atuamos.",
             content_paragraph2: "A cada novo desafio, reafirmamos nosso compromisso em entregar produtos e serviços que superem as expectativas de nossos clientes, sempre com foco no cuidado e na segurança. Ao longo de mais de 20 anos de atuação, o Grupo Ballke tem se destacado pela sua capacidade de adaptação e evolução, buscando constantemente aprimorar seus processos e garantir o melhor em cada entrega.",
             content_paragraph3: "Agora, ampliamos nosso olhar para contribuir ativamente com a inovação em diferentes áreas do mercado. Nossa missão é apoiar empresas e profissionais na superação de desafios, promovendo soluções estratégicas, tecnológicas e sustentáveis que gerem impacto real — na saúde e além dela.",
@@ -59,6 +61,12 @@ function ConhecaPage() {
     `,
   };
 
+  const contentStyle = {
+    backgroundImage: `
+      url(${content.content_section.content_bg_img})
+    `,
+  }
+
   return (
     <>
       <section className="section-container conheca-hero-background" style={heroStyle}>
@@ -69,7 +77,7 @@ function ConhecaPage() {
         </h2>
       </section>
 
-      <section className="section-container conheca-main-background">
+      <section className="section-container conheca-main-background" style={contentStyle}>
         <h2 className="conheca-text">
           {content.content_section.content_paragraph1}
         </h2>
