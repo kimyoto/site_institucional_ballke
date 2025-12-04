@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import { Routes, Route } from "react-router-dom";
@@ -11,12 +11,22 @@ import CarreirasPage from "./pages/CarreirasPage";
 import ContatoPage from "./pages/ContatoPage";
 import Footer from "./components/footer/Footer";
 
+const RedirectToExternal = () => {
+  useEffect(() => {
+    // Redireciona o navegador para a URL externa
+    window.location.href = "http://127.0.0.1:8000/admin/";
+  }, []);
+
+  return <div>Redirecionando para o Admin...</div>;
+};
+
 function App() {
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/admin" element={<RedirectToExternal />} />
         <Route path="/conheca" element={<ConhecaPage />} />
         <Route path="/quem-somos" element={<QuemSomosPage />} />
         <Route path="/nossa-cultura" element={<NossaCulturaPage />} />
