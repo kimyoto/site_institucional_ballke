@@ -49,7 +49,7 @@
   font-size: 32px;
   font-weight: 700;
   color: #4D555A;
-  margin-bottom: 40px;
+  margin-bottom: 27px;
 }
 
 /* --- INFO GRID (Telefone e Email) --- */
@@ -57,7 +57,7 @@
   display: flex;
   justify-content: space-between;
   width: 80%;
-  margin-bottom: 60px;
+  margin-bottom: 27px;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -75,14 +75,14 @@
   font-size: 20px;
   color: #4D555A;
   font-weight: 600;
-  margin-bottom: 15px;
+  margin-bottom: 0px;
 }
 
 .info-value {
   font-size: 16px;
   color: #4D555A;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   display: flex;
   align-items: center;
 }
@@ -92,6 +92,11 @@
   color: #4D555A;
   line-height: 1.5;
   white-space: pre-line;
+}
+
+.contact-icon {
+  font-size: 24px;
+  margin-right: 10px;
 }
 
 /* --- FORM SECTION --- */
@@ -105,7 +110,7 @@
 .form-title {
   font-size: 32px;
   color: #4D555A;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   font-weight: 700;
 }
 
@@ -151,7 +156,7 @@
   background-color: #4D555A; /* Cinza escuro do botão */
   color: #ffffff;
   border: none;
-  border-radius: 25px; /* Botão bem arredondado */
+  border-radius: 21px; /* Botão bem arredondado */
   padding: 12px 40px;
   font-size: 18px;
   font-family: "Aller", sans-serif;

@@ -1,5 +1,6 @@
 import React from "react";
 import "./ContatoPage.css";
+import { CiPhone, CiMail } from "react-icons/ci";
 
 function ContatoPage() {
 
@@ -22,8 +23,8 @@ function ContatoPage() {
           <div className="info-item">
             <h3 className="info-label">Telefone</h3>
             <p className="info-value phone-highlight">
-              <i className="fa fa-phone" aria-hidden="true" style={{marginRight: '8px'}}></i>
-              (11) 5199-0688
+              {React.createElement(CiPhone as any, { className: "contact-icon" })}
+              <span className="icon-text">(11) 5199-0688</span>
             </p>
             <p className="info-subtext">{"Segunda a Sexta\n7h42 às 18h00 (BRST)"}</p>
           </div>
@@ -31,8 +32,8 @@ function ContatoPage() {
           <div className="info-item">
             <h3 className="info-label">E-mail</h3>
             <p className="info-value email-highlight">
-              <i className="fa fa-envelope" aria-hidden="true" style={{marginRight: '8px'}}></i>
-              falecom@grupoballke.com.br
+              {React.createElement(CiMail as any, { className: "contact-icon" })}
+              <span className="icon-text">falecom@grupoballke.com.br</span>
             </p>
           </div>
         </div>
