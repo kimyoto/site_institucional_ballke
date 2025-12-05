@@ -1,23 +1,181 @@
-.contato-section {
-  height: 100vh;
+/* Container Principal */
+.contact-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-left: 20%;
+  width: 100%;
+  font-family: "Aller", sans-serif;
 }
 
-.contato-text1 {
-  font-family: "Aller", sans-serif;
+/* --- HERO SECTION --- */
+.contact-hero-section {
+  width: 100%;
+  height: 549px;
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url('../assets/duvidas-bkg.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative;
+  flex-direction: column !important;
+  margin-bottom: 50px;
+}
+
+.contact-hero-text {
+  color: #ffffff;
+  font-size: 96px;
+  font-weight: normal;
+  text-align: center;
+  z-index: 10;
+  max-width: 90%;
+}
+
+/* --- WRAPPER DE CONTEÚDO --- */
+.contact-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.section-title {
+  font-family: 'Aller', sans-serif;
   font-size: 32px;
-  font-weight: 600;
-  color: #4d555a;
-  text-align: left;
+  font-weight: 700;
+  color: #4D555A;
+  margin-bottom: 40px;
 }
 
-.contato-text2 {
-  font-family: "Aller", sans-serif;
+/* --- INFO GRID (Telefone e Email) --- */
+.contact-info-grid {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.info-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 280px;
+}
+
+.info-label {
+  font-size: 20px;
+  color: #4D555A;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.info-value {
   font-size: 16px;
-  font-weight: 400;
-  color: #4d555a;
-  text-align: left;
+  color: #4D555A;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.info-subtext {
+  font-size: 16px;
+  color: #4D555A;
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+/* --- FORM SECTION --- */
+.form-container-block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-title {
+  font-size: 32px;
+  color: #4D555A;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.form-subtitle {
+  font-size: 18px;
+  color: #4D555A;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px; /* Largura similar à imagem */
+  gap: 15px;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  background-color: #ECECEC; /* Cinza claro da imagem */
+  border: 1px solid #4D555A;
+  border-radius: 12px; /* Bordas arredondadas conforme imagem */
+  padding: 15px;
+  font-family: "Aller", sans-serif;
+  font-size: 14px;
+  color: #4D555A;
+  box-sizing: border-box;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #4D555A;
+  background-color: #fff;
+}
+
+.form-textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: #4D555A; /* Cinza escuro do botão */
+  color: #ffffff;
+  border: none;
+  border-radius: 25px; /* Botão bem arredondado */
+  padding: 12px 40px;
+  font-size: 18px;
+  font-family: "Aller", sans-serif;
+  cursor: pointer;
+  align-self: center; /* Centraliza o botão no form flex column */
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #333333;
+}
+
+/* Responsividade básica para Mobile */
+@media (max-width: 768px) {
+  .contact-hero-text {
+    font-size: 32px;
+  }
+  
+  .contact-info-grid {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    width: 90%;
+  }
 }
