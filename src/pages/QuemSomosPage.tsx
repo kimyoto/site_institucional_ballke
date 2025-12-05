@@ -64,7 +64,23 @@ function QuemSomosPage() {
             cards_img_cultura: require("../assets/quemsomos3.png"),
             cards_text_cultura: "NOSSA CULTURA",
           },
-          partners: [],
+          partners: [
+            {
+              name: "Meta",
+              alt: "Logo Meta",
+              image: require("../assets/meta.png"),
+            },
+            {
+              name: "Google",
+              alt: "Logo Google",
+              image: require("../assets/google.png"),
+            },
+            {
+              name: "Optidata",
+              alt: "Logo Optidata",
+              image: require("../assets/optidata.png"),
+            },
+          ],
         })
       });
   }, []);
