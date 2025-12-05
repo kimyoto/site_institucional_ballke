@@ -1,8 +1,5 @@
 .quemsomos-hero-background {
   height: 549px; 
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-    url('../assets/topoquemsomos.png');
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,6 +117,7 @@
 .logos-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 86px;

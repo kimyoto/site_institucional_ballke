@@ -28,7 +28,7 @@ function ConhecaPage() {
   const [content, setContent] = useState<ConhecaPageData | null>(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/conheca")
+    fetch(`${process.env.REACT_APP_BASE_URL}/api/conheca`)
       .then((response) => response.json())
       .then((data: ConhecaPageData) => setContent(data))
       .catch((error) => {

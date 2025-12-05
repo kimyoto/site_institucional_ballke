@@ -24,7 +24,7 @@ function MarcasPage() {
   const [content, setContent] = useState<MarcasPageData | null>(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/marcas/")
+    fetch(`${process.env.REACT_APP_BASE_URL}/api/marcas/`)
       .then((response) => response.json())
       .then((data: MarcasPageData) => setContent(data))
       .catch((error) => {

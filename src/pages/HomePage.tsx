@@ -47,7 +47,7 @@ function HomePage() {
   const [content, setContent] = useState<HomePageData | null>(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/home/")
+    fetch(`${process.env.REACT_APP_BASE_URL}/api/home/`)
     .then((res) => res.json())
     .then((data) => setContent(data))
     .catch((error) => {

@@ -24,7 +24,7 @@ function NossaCulturaPage() {
   const [content, setContent] = useState<NossaCulturaPageData | null>(null);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/cultura/")
+    fetch(`${process.env.REACT_APP_BASE_URL}/api/cultura/`)
       .then((response) => response.json())
       .then((data: NossaCulturaPageData) => setContent(data))
       .catch((error) => {
