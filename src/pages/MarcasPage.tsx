@@ -40,7 +40,7 @@ function MarcasPage() {
             content_icon_nestsafe: require("../assets/nestsafecolorido.png"),
             content_text_nestsafe: "Criada para atender revendedores, farmácias, distribuidores e e-commerces, a Nestsafe oferece produtos médicos que combinam alto padrão de qualidade, conformidade regulatória e preços acessíveis. A Nestsafe se posiciona como uma solução estratégica para empresas que atuam na revenda de produtos para saúde. Sua linha inclui itens essenciais para o dia a dia de clínicas, hospitais e estabelecimentos do setor, com garantia de procedência e confiabilidade.",
             content_icon_bbranding: require("../assets/bbranding.png"),
-            content_text_bbranding: null,
+            content_text_bbranding: "A BBranding é a holding responsável por integrar, direcionar e impulsionar as marcas do Grupo Ballke, atuando como o núcleo estratégico que garante alinhamento, eficiência e crescimento sustentável. Com visão de longo prazo e gestão orientada por dados, a BBranding coordena operações, fortalece processos e promove inovação contínua, assegurando que cada marca do grupo mantenha identidade própria, desempenho consistente e foco na entrega de valor ao mercado.",
           }
         });
       });
