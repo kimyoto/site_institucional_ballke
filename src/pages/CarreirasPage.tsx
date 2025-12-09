@@ -5,7 +5,8 @@ import BotaoPagina from "../components/botao-pagina/BotaoPagina";
 
 function CarreirasPage() {
   const [desabilitarCampoDescritivo, setDesabilitarCampoDescritivo] = useState(true);
-  const [selecionado, setSelecionado] = useState<'sim' | 'nao' | null>(null); 
+  const [selecionado, setSelecionado] = useState<'sim' | 'nao' | null>(null);
+  const [textoDescritivo, setTextoDescritivo] = useState(''); 
  
   return (
     <>
@@ -45,8 +46,8 @@ function CarreirasPage() {
       <text className="carreiras-text1">Você tem experiência na área ou cargo desejada?</text>
       <div className="button-container">
         <BotaoPagina texto="Sim" isSelected={selecionado === 'sim'} onClick={() => { setDesabilitarCampoDescritivo(false); setSelecionado('sim'); }}/>
-        <BotaoPagina texto="Não" isSelected={selecionado === 'nao'} onClick={() => { setDesabilitarCampoDescritivo(true); setSelecionado('nao'); }}/>
-        <CampoDeTexto placeholder="Deixar descritivo" desabilitar={desabilitarCampoDescritivo}/> 
+        <BotaoPagina texto="Não" isSelected={selecionado === 'nao'} onClick={() => { setDesabilitarCampoDescritivo(true); setSelecionado('nao'); setTextoDescritivo(''); }}/>
+        <CampoDeTexto placeholder="Deixar descritivo" desabilitar={desabilitarCampoDescritivo} valor={textoDescritivo} onChange={setTextoDescritivo}/> 
       </div>
       <div className="button-enviar-container">
         <button className="botao-enviar-container text">Faça upload do seu curriculo <br/>(formato PDF ou Word)</button>

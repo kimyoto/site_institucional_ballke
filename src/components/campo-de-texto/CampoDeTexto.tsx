@@ -3,13 +3,18 @@ import './CampoDeTexto.css';
 
 export default function CampoDeTexto(props: {
   placeholder: string;
-desabilitar?: boolean;})  {
+  desabilitar?: boolean;
+  valor?: string;
+  onChange?: (valor: string) => void;
+})  {
     return (
       <div className="campo-de-texto-container">
         <input
           type="text"
           placeholder={props.placeholder}
           disabled={props.desabilitar}
+          value={props.valor || ''}
+          onChange={(e) => props.onChange?.(e.target.value)}
         />
       </div>
     );
