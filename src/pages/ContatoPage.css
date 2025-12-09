@@ -121,16 +121,16 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 600px; /* Largura similar à imagem */
+  max-width: 600px;
   gap: 15px;
 }
 
 .form-input,
 .form-textarea {
   width: 100%;
-  background-color: #ECECEC; /* Cinza claro da imagem */
+  background-color: #ECECEC;
   border: 1px solid #4D555A;
-  border-radius: 12px; /* Bordas arredondadas conforme imagem */
+  border-radius: 12px;
   padding: 15px;
   font-family: "Aller", sans-serif;
   font-size: 14px;
@@ -150,15 +150,15 @@
 }
 
 .submit-button {
-  background-color: #4D555A; /* Cinza escuro do botão */
+  background-color: #4D555A;
   color: #ffffff;
   border: none;
-  border-radius: 21px; /* Botão bem arredondado */
+  border-radius: 21px;
   padding: 12px 40px;
   font-size: 18px;
   font-family: "Aller", sans-serif;
   cursor: pointer;
-  align-self: center; /* Centraliza o botão no form flex column */
+  align-self: center;
   margin-top: 10px;
   transition: background-color 0.3s ease;
 }
