@@ -6,6 +6,7 @@ export default function CampoDeTexto(props: {
   desabilitar?: boolean;
   valor?: string;
   onChange?: (valor: string) => void;
+  required?: boolean;
 })  {
     return (
       <div className="campo-de-texto-container">
@@ -15,6 +16,7 @@ export default function CampoDeTexto(props: {
           disabled={props.desabilitar}
           value={props.valor || ''}
           onChange={(e) => props.onChange?.(e.target.value)}
+          required={props.required}
         />
       </div>
     );

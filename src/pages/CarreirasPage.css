@@ -97,12 +97,21 @@
   margin-top: 10px;
 }
 
+.button-enviar-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-top: 32px;
+}
+
 .button-enviar-container > .text {
   font-family: "Aller", sans-serif;
   font-size: 14px;
   font-weight: 400;
   color: #4d555a;
-  margin-top: 32px;
+  margin: 0;
 }
 
 .button-enviar-container > .botao-pagina-container {
@@ -139,4 +148,33 @@ text {
 
 .botao-enviar-container:hover, .botao-enviar-container.selected  {
   background-color: #ECECEC;
+}
+
+.submit-button-carreiras {
+  background-color: #4D555A;
+  color: #ffffff;
+  border: none;
+  border-radius: 21px;
+  padding: 12px 40px;
+  font-size: 18px;
+  font-family: "Aller", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button-carreiras:hover {
+  background-color: #333333;
+}
+
+.submit-button-carreiras:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+
+.form-error-message {
+  color: #dc3545;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 16px;
+  font-family: "Aller", sans-serif;
 }
