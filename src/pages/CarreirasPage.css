@@ -1,8 +1,5 @@
 .carreiras-hero-background {
   height: 548px;
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("../assets/carreiras-bkg.png");
   align-items: center;
   justify-content: center;
 }
