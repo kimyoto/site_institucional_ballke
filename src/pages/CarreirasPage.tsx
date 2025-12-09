@@ -211,8 +211,19 @@ function CarreirasPage() {
             
             <div className="experience-row">
               <div className="button-group">
-                <BotaoPagina texto="Sim" isSelected={experiencia === 'sim'} onClick={() => setExperiencia('sim')}/>
-                <BotaoPagina texto="Não" isSelected={experiencia === 'nao'} onClick={() => { setExperiencia('nao'); setTextoDescritivo(''); }}/>
+                <BotaoPagina
+                  type="button"
+                  texto="Sim" 
+                  isSelected={experiencia === 'sim'} 
+                  onClick={() => setExperiencia('sim')}
+                />
+                <BotaoPagina 
+                  type="button"
+                  texto="Não" 
+                  isSelected={experiencia === 'nao'} 
+                  onClick={() => { setExperiencia('nao'); 
+                  setTextoDescritivo(''); }}
+                />
               </div>
               <CampoDeTexto placeholder={experiencePlaceholder} desabilitar={isDescritivoDisabled} valor={textoDescritivo} onChange={setTextoDescritivo}/>
             </div>
