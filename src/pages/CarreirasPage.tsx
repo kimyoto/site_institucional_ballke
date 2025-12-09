@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import "./CarreirasPage.css";
 import CampoDeTexto from "../components/campo-de-texto/CampoDeTexto";
 import BotaoPagina from "../components/botao-pagina/BotaoPagina";
@@ -34,17 +34,24 @@ interface CarreirasPageData {
   positions_section: CarreirasPositionsSection[];
 }
 
+
 function CarreirasPage() {
-  const [desabilitarCampoDescritivo, setDesabilitarCampoDescritivo] = useState(true);
-  const [selecionado, setSelecionado] = useState<'sim' | 'nao' | null>(null);
-  const [textoDescritivo, setTextoDescritivo] = useState(''); 
   const [content, setContent] = useState<CarreirasPageData | null>(null);
+
+  // Form states
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [idade, setIdade] = useState('');
   const [telefone, setTelefone] = useState('');
   const [posicao, setPosicao] = useState('');
+  const [experiencia, setExperiencia] = useState<'sim' | 'nao' | null>(null);
+  const [textoDescritivo, setTextoDescritivo] = useState('');
+  const [curriculo, setCurriculo] = useState<File | null>(null);
+  
+  // UI States
+  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [erroValidacao, setErroValidacao] = useState('');
+
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_BASE_URL}/api/carreiras/`)
@@ -52,6 +59,7 @@ function CarreirasPage() {
       .then(data => setContent(data))
       .catch(error => {
         console.error("Erro ao buscar dados da página de Carreiras:", error);
+        // Fallback content
         setContent({
           hero_section: {
             hero_bg_img: require("../assets/carreiras-bkg.png"),
@@ -71,65 +79,104 @@ function CarreirasPage() {
             form_btn_text: "Enviar currículo",
           },
           positions_section: []
-        })
+        });
       });
   }, []);
+
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+      if (allowedTypes.includes(file.type)) {
+        setCurriculo(file);
+        setErroValidacao('');
+      } else {
+        setCurriculo(null);
+        setErroValidacao('Formato de arquivo inválido. Por favor, envie um PDF ou Word.');
+      }
+    }
+  };
+
+  const resetForm = () => {
+    setNome('');
+    setEmail('');
+    setIdade('');
+    setTelefone('');
+    setPosicao('');
+    setExperiencia(null);
+    setTextoDescritivo('');
+    setCurriculo(null);
+    // Reset file input
+    const fileInput = document.getElementById('curriculo-upload') as HTMLInputElement;
+    if(fileInput) fileInput.value = '';
+  }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setErroValidacao('');
+
+    // --- Validation ---
+    if (!nome.trim() || !email.trim() || !idade.trim() || !telefone.trim() || !posicao.trim()) {
+      setErroValidacao('Por favor, preencha todos os campos obrigatórios.');
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setErroValidacao('Por favor, insira um e-mail válido.');
+      return;
+    }
+    if (experiencia === null) {
+      setErroValidacao('Por favor, selecione se você tem experiência.');
+      return;
+    }
+    if (experiencia === 'sim' && !textoDescritivo.trim()) {
+      setErroValidacao('Por favor, adicione uma descrição da sua experiência.');
+      return;
+    }
+    if (!curriculo) {
+      setErroValidacao('Por favor, faça o upload do seu currículo.');
+      return;
+    }
+    // --- End Validation ---
+
+    setFormStatus('sending');
+
+    const formData = new FormData();
+    formData.append('nome', nome);
+    formData.append('email', email);
+    formData.append('idade', idade);
+    formData.append('telefone', telefone);
+    formData.append('posicao', posicao);
+    formData.append('tem_experiencia', experiencia);
+    formData.append('descricao_experiencia', textoDescritivo);
+    formData.append('arquivo', curriculo);
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/api/enviar-curriculo/`, {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        setFormStatus('success');
+        resetForm();
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      console.error('Erro de rede ao enviar formulário:', error);
+      setFormStatus('error');
+    }
+  };
 
   if (!content) return <p>Carregando...</p>;
 
   const heroStyle = {
-    backgroundImage: `
-      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-      url(${content.hero_section.hero_bg_img})
-    `
-  }
-
-  const validarFormulario = () => {
-    if (!nome.trim()) {
-      setErroValidacao('Por favor, preencha o campo Nome completo.');
-      return false;
-    }
-    if (!email.trim()) {
-      setErroValidacao('Por favor, preencha o campo E-mail.');
-      return false;
-    }
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!regexEmail.test(email)) {
-      setErroValidacao('Por favor, insira um e-mail válido.');
-      return false;
-    }
-    if (!idade.trim()) {
-      setErroValidacao('Por favor, preencha o campo Idade.');
-      return false;
-    }
-    if (!telefone.trim()) {
-      setErroValidacao('Por favor, preencha o campo Telefone.');
-      return false;
-    }
-    if (!posicao.trim()) {
-      setErroValidacao('Por favor, preencha o campo Cargo/Área desejada.');
-      return false;
-    }
-    if (selecionado === null) {
-      setErroValidacao('Por favor, selecione "Sim" ou "Não" na seção de experiência.');
-      return false;
-    }
-    if (selecionado === 'sim' && !textoDescritivo.trim()) {
-      setErroValidacao('Por favor, preencha o campo de descrição da experiência.');
-      return false;
-    }
-    setErroValidacao('');
-    return true;
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${content.hero_section.hero_bg_img})`
   };
 
-  const handleEnviarCurriculo = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    validarFormulario();
-  };
-  
-  const experiencePlaceholder = selecionado === null
-    ? 'Selecione se você tem experiência'
-    : (selecionado === 'nao' ? '' : 'Deixar descriSelecione se você tem experiênciativo');
+  const isDescritivoDisabled = experiencia !== 'sim';
+  const experiencePlaceholder = experiencia === 'nao' ? 'Não aplicável' : 'Descreva sua experiência...';
+
 
   return (
     <>
@@ -138,38 +185,77 @@ function CarreirasPage() {
       </section>
 
       <section className="section-container carreiras-text">
-        <h2 className="carreiras-text1">
-          {content.form_section.form_intro_text}
-        </h2>
+        <p className="carreiras-text1">{content.form_section.form_intro_text}</p>
       </section>
 
-    <section className="section-container informacoes-pessoais-container" >
-      <h2 className="informacoes">{content.form_section.form_title}</h2>
-      <form className="form-container"> 
-        <div className="um-campo">
-          <CampoDeTexto placeholder={content.form_section.form_name} required={true} valor={nome} onChange={setNome}/>
-        </div>
-        <div className='multiplos-campos'>
-          <CampoDeTexto placeholder={content.form_section.form_email} required={true} valor={email} onChange={setEmail}/>
-          <CampoDeTexto placeholder={content.form_section.form_age} required={true} valor={idade} onChange={setIdade}/>
-          <CampoDeTexto placeholder={content.form_section.form_phone} required={true} valor={telefone} onChange={setTelefone}/>
-        </div>
-        <div className="um-campo">
-          <CampoDeTexto placeholder={content.form_section.form_position} required={true} valor={posicao} onChange={setPosicao}/>
-        </div>
-      </form>
-      <text className="carreiras-text1">{content.form_section.form_experience}</text>
-      <div className="button-container">
-        <BotaoPagina texto="Sim" isSelected={selecionado === 'sim'} onClick={() => { setDesabilitarCampoDescritivo(false); setSelecionado('sim'); }}/>
-        <BotaoPagina texto="Não" isSelected={selecionado === 'nao'} onClick={() => { setDesabilitarCampoDescritivo(true); setSelecionado('nao'); setTextoDescritivo(''); }}/>
-        <CampoDeTexto placeholder={experiencePlaceholder} desabilitar={desabilitarCampoDescritivo} valor={textoDescritivo} onChange={setTextoDescritivo}/> 
-      </div>
-      {erroValidacao && <p className="form-error-message">{erroValidacao}</p>}
-      <div className="button-enviar-container">
-        <button className="botao-enviar-container text">{content.form_section.form_upload_text1}<br/>{content.form_section.form_upload_text2}</button>
-        <button type="button" className="submit-button-carreiras" onClick={handleEnviarCurriculo}>{content.form_section.form_btn_text}</button>
-      </div>
-    </section>
+      <section className="section-container informacoes-pessoais-container">
+        <h2 className="informacoes">{content.form_section.form_title}</h2>
+        
+        <form className="form-container" onSubmit={handleSubmit}>
+          <div className="um-campo">
+            <CampoDeTexto placeholder={content.form_section.form_name} required={true} valor={nome} onChange={setNome}/>
+          </div>
+          <div className='multiplos-campos'>
+            <CampoDeTexto placeholder={content.form_section.form_email} required={true} valor={email} onChange={setEmail}/>
+            <CampoDeTexto placeholder={content.form_section.form_age} required={true} valor={idade} onChange={setIdade}/>
+            <CampoDeTexto placeholder={content.form_section.form_phone} required={true} valor={telefone} onChange={setTelefone}/>
+          </div>
+          <div className="um-campo">
+            <CampoDeTexto placeholder={content.form_section.form_position} required={true} valor={posicao} onChange={setPosicao}/>
+          </div>
+
+          <div className="experience-wrapper">
+            <p className="carreiras-text1" style={{ textAlign: 'center', width: '100%', marginBottom: '8px' }}>
+              {content.form_section.form_experience}
+            </p>
+            
+            <div className="experience-row">
+              <div className="button-group">
+                <BotaoPagina texto="Sim" isSelected={experiencia === 'sim'} onClick={() => setExperiencia('sim')}/>
+                <BotaoPagina texto="Não" isSelected={experiencia === 'nao'} onClick={() => { setExperiencia('nao'); setTextoDescritivo(''); }}/>
+              </div>
+              <CampoDeTexto placeholder={experiencePlaceholder} desabilitar={isDescritivoDisabled} valor={textoDescritivo} onChange={setTextoDescritivo}/>
+            </div>
+          </div>
+
+          <div className="form-footer">
+            {erroValidacao && <p className="form-error-message">{erroValidacao}</p>}
+
+            {formStatus === 'success' && (
+              <p className="form-success-message">Obrigado! Seu currículo foi enviado com sucesso.</p>
+            )}
+            {formStatus === 'error' && (
+              <p className="form-error-message">Desculpe, ocorreu um erro. Tente novamente mais tarde.</p>
+            )}
+
+            <div className="submission-row">
+              <div className="upload-container">
+                  <label htmlFor="curriculo-upload" className="botao-upload">
+                      {content.form_section.form_upload_text1}
+                      <br/>
+                      <span>{content.form_section.form_upload_text2}</span>
+                  </label>
+                  <input 
+                      id="curriculo-upload"
+                      type="file" 
+                      accept=".pdf,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                      onChange={handleFileChange} 
+                      style={{display: 'none'}} 
+                  />
+                  {curriculo && (
+                    <p className="file-name">
+                        Arquivo selecionado: {curriculo.name.length > 80 ? curriculo.name.substring(0, 80) + '...' : curriculo.name}
+                    </p>
+                )}
+              </div>
+              
+              <button type="submit" className="submit-button-carreiras" disabled={formStatus === 'sending'}>
+                {formStatus === 'sending' ? 'Enviando...' : content.form_section.form_btn_text}
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
 
       {/* Positions Section */}
       {content.positions_section && content.positions_section.length > 0 ? (
