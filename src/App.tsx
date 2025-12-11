@@ -9,6 +9,7 @@ import NossaCulturaPage from "./pages/NossaCulturaPage";
 import MarcasPage from "./pages/MarcasPage";
 import CarreirasPage from "./pages/CarreirasPage";
 import ContatoPage from "./pages/ContatoPage";
+import PoliticasPage from "./pages/PoliticasPage";
 import Footer from "./components/footer/Footer";
 
 const RedirectToExternal = () => {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/marcas" element={<MarcasPage />} />
         <Route path="/carreiras" element={<CarreirasPage />} />
         <Route path="/contato" element={<ContatoPage />} />
+        <Route path="/politicas" element={<PoliticasPage />}  />
       </Routes>
       <Footer />
     </div>

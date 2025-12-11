@@ -30,6 +30,9 @@ function Header() {
               <li>
                 <Link to="/carreiras">Carreiras</Link>
               </li>
+              <li>
+                <Link to="/politicas">LGPD</Link>
+              </li>
             </ul>
           </nav>
         </div>
