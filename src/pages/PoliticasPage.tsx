@@ -158,7 +158,8 @@ interface PoliticasTransferenciaSection {
 
 interface PoliticasMudancasSection {
   title: string | null;
-  paragraph: string | null;
+  paragraph1: string | null;
+  paragraph2: string | null;
 }
 
 interface PoliticasPageData {
@@ -219,7 +220,7 @@ function PoliticasPage() {
           quem_somos_section: {
             title: "1 - Quem somos nós?",
             paragraph1:
-              "O Grupo Ballke é um conjunto de empresas nacionais que há mais de 18 anos oferta produtos para saúde e cuidados do corpo, com mais de 10 mil itens de marcas renomadas em estoque que atende todas as exigências do Ministério da Saúde e Anvisa.",
+              "O Grupo Ballke é um conjunto de empresas nacionais que há mais de 21 anos oferta produtos para saúde e cuidados do corpo, com mais de 10 mil itens de marcas renomadas em estoque que atende todas as exigências do Ministério da Saúde e Anvisa.",
             paragraph2:
               'Possui sede na Travessa Sinamomo, n. 70, Bairro Arvoredo, município de Concórdia-SC, CEP 89701-494. Nessa política de privacidade, "nós" se refere ao Grupo Ballke e/ou Magazine Médica.',
             paragraph3:
@@ -395,8 +396,9 @@ function PoliticasPage() {
           },
           mudancas_section: {
             title: "18 - Mudanças e Revisões da Política de Privacidade",
-            paragraph:
+            paragraph1:
               "Quaisquer alterações na nossa política de privacidade serão publicadas no nosso website e informadas via e-mail. Se fizermos quaisquer alterações significativas, vamos deixar isso claro. Também fazemos revisões regulares da nossa política conforme a evolução da matéria.",
+              paragraph2: "Esta política foi atualizada pela última vez em Março de 2021.",
           },
         });
       });
@@ -847,7 +849,9 @@ function PoliticasPage() {
             {content.mudancas_section.title}
           </h3>
 
-          <p className="politicas-text">{content.mudancas_section.paragraph}</p>
+          <p className="politicas-text">{content.mudancas_section.paragraph1}</p>
+
+          <p className="politicas-text">{content.mudancas_section.paragraph2}</p>
         </div>
       </section>
     </>
