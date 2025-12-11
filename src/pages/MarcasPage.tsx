@@ -87,6 +87,20 @@ function MarcasPage() {
         />
         <p className="marca-text text-bbranding">{content.content_section.content_text_bbranding}</p>
       </section>
+
+      <section className="section-container marcas-video-section">
+        <div className="marcas-video-container">
+          <div className="marcas-video-wrapper">
+            <iframe
+              src="https://www.youtube.com/embed/bQbqrRYKCXk"
+              title="Vídeo - Grupo Ballke"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 }
