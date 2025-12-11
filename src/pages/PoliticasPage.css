@@ -27,8 +27,9 @@
 }
 
 .politicas-wrapper {
-  max-width: 900px;
   width: 100%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .politicas-intro {
