@@ -122,7 +122,19 @@
 }
 
 /* --- RESPONSIVE DESIGN --- */
+@media (max-width: 1024px) {
+  .text-topo-politicas {
+    font-size: 64px;
+  }
+}
+
 @media (max-width: 768px) {
+  .politicas-hero-background {
+    height: auto;
+    min-height: 400px;
+    padding: 100px 20px 50px;
+  }
+
   .text-topo-politicas {
     font-size: 48px;
   }
@@ -136,12 +148,18 @@
   }
 
   .politicas-text,
-  .politicas-list {
+  .politicas-list,
+  .politicas-intro {
     font-size: 14px;
   }
 
   .politicas-wrapper {
-    padding: 0 15px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .politicas-content-section {
+    padding: 0 15px 40px 15px;
   }
 }
 
@@ -160,12 +178,19 @@
   }
 
   .politicas-text,
-  .politicas-list {
+  .politicas-list,
+  .politicas-intro,
+  .politicas-contact-info {
     font-size: 13px;
   }
 
   .politicas-list {
     margin-left: 20px;
+  }
+  
+  .politicas-subitem-group {
+    margin-left: 0;
+    padding-left: 15px;
   }
 
   .politicas-contact-info {

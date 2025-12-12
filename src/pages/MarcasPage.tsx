@@ -13,6 +13,7 @@ interface MarcasContentSection {
   content_text_nestsafe: string | null;
   content_icon_bbranding: string | null;
   content_text_bbranding: string | null;
+  content_video_link: string | null;
 }
 
 interface MarcasPageData {
@@ -41,6 +42,7 @@ function MarcasPage() {
             content_text_nestsafe: "Criada para atender revendedores, farmácias, distribuidores e e-commerces, a Nestsafe oferece produtos médicos que combinam alto padrão de qualidade, conformidade regulatória e preços acessíveis. A Nestsafe se posiciona como uma solução estratégica para empresas que atuam na revenda de produtos para saúde. Sua linha inclui itens essenciais para o dia a dia de clínicas, hospitais e estabelecimentos do setor, com garantia de procedência e confiabilidade.",
             content_icon_bbranding: require("../assets/bbranding.png"),
             content_text_bbranding: "A BBranding é a holding responsável por integrar, direcionar e impulsionar as marcas do Grupo Ballke, atuando como o núcleo estratégico que garante alinhamento, eficiência e crescimento sustentável. Com visão de longo prazo e gestão orientada por dados, a BBranding coordena operações, fortalece processos e promove inovação contínua, assegurando que cada marca do grupo mantenha identidade própria, desempenho consistente e foco na entrega de valor ao mercado.",
+            content_video_link: "https://www.youtube.com/embed/bQbqrRYKCXk"
           }
         });
       });
@@ -54,6 +56,38 @@ function MarcasPage() {
       url(${content.hero_section.hero_bg_img})
     `
   }
+
+  function toEmbedUrl(url: string | null): string | null {
+  if (!url) return null;
+
+  try {
+    // SHORTS
+    if (url.includes("youtube.com/shorts/")) {
+      const id = url.split("shorts/")[1].split("?")[0];
+      return `https://www.youtube.com/embed/${id}`;
+    }
+
+    // WATCH
+    if (url.includes("watch?v=")) {
+      const id = new URL(url).searchParams.get("v");
+      return `https://www.youtube.com/embed/${id}`;
+    }
+
+    // YOUTU.BE
+    if (url.includes("youtu.be/")) {
+      const id = url.split("youtu.be/")[1].split("?")[0];
+      return `https://www.youtube.com/embed/${id}`;
+    }
+
+    // Se já for embed
+    if (url.includes("embed")) return url;
+
+    return url;
+  } catch (error) {
+    console.error("URL inválida:", error);
+    return null;
+  }
+}
 
   return (
     <>
@@ -92,7 +126,7 @@ function MarcasPage() {
         <div className="marcas-video-container">
           <div className="marcas-video-wrapper">
             <iframe
-              src="https://www.youtube.com/embed/bQbqrRYKCXk"
+              src={toEmbedUrl(content.content_section.content_video_link) || undefined}
               title="Vídeo - Grupo Ballke"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

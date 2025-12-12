@@ -17,7 +17,7 @@
 
 .conheca-text{
   font-family: 'Aller', sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 400;
   color: #4D555A;
   text-align: justify;
@@ -39,3 +39,34 @@
   text-align: center;
 }
 
+/* Tablet (1024px e abaixo) */
+@media (max-width: 1024px) {
+  .topo-text-1 {
+    font-size: 72px;
+  }
+}
+
+/* Mobile (768px e abaixo) */
+@media (max-width: 768px) {
+  .conheca-hero-background {
+    height: auto;
+    padding: 100px 20px;
+  }
+
+  .topo-text-1 {
+    font-size: 36px;
+  }
+  
+  .conheca-main-background {
+    padding-top: 20px;
+  }
+  
+  .conheca-text {
+    font-size: 16px;
+    text-align: justify;
+  }
+  
+  .conheca-lona-image {
+    padding-bottom: 40px;
+  }
+}

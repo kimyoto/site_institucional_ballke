@@ -21,8 +21,6 @@
 }
 
 .marca-text {
-  margin-left: 194px;
-  margin-right: 194px;
   box-sizing: border-box; 
   font-family: 'Aller', sans-serif;
   font-size: 16px;
@@ -116,10 +114,22 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .marca-logo {
+    margin-left: 0px;
+  }
+
+  .marca-text {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
 /* Responsividade - Mobile */
 @media (max-width: 768px) {
   .marcas-hero-background {
-    height: 400px;
+    height: auto;
+    padding: 100px 20px;
   }
 
   .marcas-title {
