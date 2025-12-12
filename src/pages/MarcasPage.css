@@ -17,7 +17,6 @@
 
 .marca-logo {
   display: block; 
-  margin-left: 194px; 
 }
 
 .marca-text {
@@ -31,7 +30,7 @@
 }
 
 .logo-magazine {
-  margin-top: 139px; 
+  margin-top: 50px; 
   width: 160px;
   height: 51px;
 }
@@ -98,15 +97,6 @@
 @media (max-width: 1700px) {
   .marcas-title {
     font-size: 72px;
-  }
-
-  .marca-logo {
-    margin-left: 100px;
-  }
-
-  .marca-text {
-    margin-left: 100px;
-    margin-right: 100px;
   }
 
   .marcas-video-section {
