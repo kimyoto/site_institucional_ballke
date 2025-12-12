@@ -31,6 +31,7 @@ body {
 .link-block-wrapper {
   text-decoration: none;
 }
+
 @media (max-width: 768px) {
   html,
   body,
@@ -43,13 +44,18 @@ body {
 
   .site-header,
   .header-container {
-    position: relative !important; 
+    position: absolute !important; 
     width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
-    flex-direction: column !important;
-    background-color: #1a1a1a !important; 
-    padding: 20px !important;
+    flex-direction: row !important;
+    background-color: transparent !important; 
+    padding: 10px !important;
+    z-index: 100 !important;
+  }
+
+  .hamburger {
+    margin-right: 15px !important;
   }
 
   .header-center nav ul {
@@ -58,7 +64,6 @@ body {
     padding: 20px 0;
   }
 
-  
   .hero-section,
   .section-bg-two,
   .section-bg-three,
@@ -280,7 +285,8 @@ body {
     width: 100% !important;
     height: auto !important;
     flex-direction: column !important;
-    padding: 20px !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
     text-align: center;
   }
 
@@ -315,23 +321,6 @@ body {
     overflow-x: hidden !important;
     width: 100% !important;
     position: relative;
-  }
-
-  .site-header,
-  .header-container {
-    position: relative !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    height: auto !important;
-    flex-direction: column !important;
-    background-color: #1a1a1a !important;
-    padding: 20px !important;
-  }
-
-  .header-center nav ul {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px 0;
   }
 
   .hero-section,
@@ -551,16 +540,6 @@ body {
     text-align: center !important;
   }
 
-  .footer-container,
-  .footer-bar-gray,
-  .footer-bar-white {
-    width: 100% !important;
-    height: auto !important;
-    flex-direction: column !important;
-    padding: 20px !important;
-    text-align: center;
-  }
-
   .footer-links-group,
   .footer-social-group {
     flex-direction: column !important;
@@ -638,7 +617,7 @@ body {
     align-items: center !important;
     height: auto !important;
     min-height: 100vh !important;
-    padding-top: 120px !important;
+    padding-top: 80px !important;
     padding-bottom: 50px !important;
   }
 

@@ -94,6 +94,262 @@ body {
   background-color: rgba(66, 66, 66, 0.7);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(10px);
-  
+}
+
+/* Hamburguer Menu - Oculto por padrão */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Media Queries para Responsividade */
+
+/* Tablet (1024px e abaixo) */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .header-container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .header-center {
+    display: none;
+  }
+
+  .header-center.menu-open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(66, 66, 66, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0px 0;
+    width: 100%;
+  }
+
+  .header-center.menu-open nav ul {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+
+  .header-center.menu-open nav li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 0;
+  }
+
+  .header-center.menu-open nav li:last-child {
+    border-bottom: none;
+  }
+
+  .header-center nav a {
+    font-size: 14px;
+  }
+
+  .contact-button {
+    font-size: 14px;
+    padding: 1px 12px;
+    display: none;
+  }
+
+  .logo {
+    width: 70px;
+    height: 52px;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
+
+/* Mobile (768px e abaixo) */
+@media (max-width: 768px) {
+  .site-header {
+    position: relative;
+  }
+
+  .header-container {
+    max-width: 100%;
+    padding: 0 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-left {
+    flex: 0;
+  }
+
+  .header-center {
+    display: none;
+  }
+
+  .header-center.menu-open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(66, 66, 66, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 0 0;
+    width: 100%;
+    z-index: 99;
+  }
+
+  .header-center.menu-open nav ul {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+
+  .header-center.menu-open nav li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 12px 0;
+  }
+
+  .header-center.menu-open nav li:last-child {
+    border-bottom: none;
+  }
+
+  .header-center nav a {
+    font-size: 13px;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contact-button {
+    font-size: 13px;
+    padding: 1px 10px;
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .logo {
+    width: 60px;
+    height: 45px;
+  }
+
+  .mobile-contato {
+    display: list-item;
+  }
+}
+
+/* Mobile pequeno (480px e abaixo) */
+@media (max-width: 480px) {
+  .site-header {
+    padding: 10px 0;
+    position: relative;
+  }
+
+  .header-container {
+    max-width: 100%;
+    padding: 0 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .header-left {
+    flex: 0;
+  }
+
+  .header-center {
+    display: none;
+  }
+
+  .header-center.menu-open {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(66, 66, 66, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    width: 100%;
+    z-index: 99;
+  }
+
+  .header-center.menu-open nav ul {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+
+  .header-center.menu-open nav li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 0;
+  }
+
+  .header-center.menu-open nav li:last-child {
+    border-bottom: none;
+  }
+
+  .header-center nav a {
+    font-size: 12px;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .contact-button {
+    font-size: 12px;
+    padding: 1px 8px;
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger span {
+    width: 20px;
+    height: 2.5px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 38px;
+  }
+
+  .mobile-contato {
+    display: list-item;
+  }
 }
 
