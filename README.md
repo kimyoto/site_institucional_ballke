@@ -24,8 +24,11 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
+The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
+
+**Nota Importante sobre SEO (robots.txt e sitemap.xml):**
+Após executar `npm run build`, lembre-se de que os arquivos `public/robots.txt` e `sitemap-generator.js` (que gera `public/sitemap.xml`) contêm URLs de placeholder (`https://www.seusite.com`). Certifique-se de **atualizar essas URLs para o domínio real do seu site** antes de fazer o deploy final em produção.
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
