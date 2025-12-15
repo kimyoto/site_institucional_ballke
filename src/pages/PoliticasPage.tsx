@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./PoliticasPage.css";
+import { SEO } from "../components/SEO";
 
 interface PoliticasHeroSection {
   hero_bg_img: string | null;
   hero_text: string | null;
+}
+
+interface SEOSection {
+  seo_title: string | null;
+  seo_description: string | null;
 }
 
 interface PoliticasIntroSection {
@@ -184,6 +190,7 @@ interface PoliticasPageData {
   menores_section: PoliticasMenoresSection;
   transferencia_section: PoliticasTransferenciaSection;
   mudancas_section: PoliticasMudancasSection;
+  seo_section: SEOSection;
 }
 
 function PoliticasPage() {
@@ -200,6 +207,10 @@ function PoliticasPage() {
           hero_section: {
             hero_bg_img: require("../assets/politicas_hero.png"),
             hero_text: "Políticas de Privacidade",
+          },
+          seo_section: {
+            seo_title: "Grupo Ballke | Políticas de Privacidade",
+            seo_description: "Leia nossas políticas de privacidade e entenda como tratamos seus dados.",
           },
           intro_section: {
             intro_paragraph:
@@ -398,7 +409,7 @@ function PoliticasPage() {
             title: "18 - Mudanças e Revisões da Política de Privacidade",
             paragraph1:
               "Quaisquer alterações na nossa política de privacidade serão publicadas no nosso website e informadas via e-mail. Se fizermos quaisquer alterações significativas, vamos deixar isso claro. Também fazemos revisões regulares da nossa política conforme a evolução da matéria.",
-              paragraph2: "Esta política foi atualizada pela última vez em Março de 2021.",
+            paragraph2: "Esta política foi atualizada pela última vez em Março de 2021.",
           },
         });
       });
@@ -415,6 +426,10 @@ function PoliticasPage() {
 
   return (
     <>
+      <SEO
+        title={content.seo_section.seo_title || undefined}
+        description={content.seo_section.seo_description || undefined}
+      />
       <section
         className="section-container politicas-hero-background"
         style={heroStyle}

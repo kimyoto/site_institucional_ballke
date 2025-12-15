@@ -2,10 +2,16 @@ import React, { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import "./CarreirasPage.css";
 import CampoDeTexto from "../components/campo-de-texto/CampoDeTexto";
 import BotaoPagina from "../components/botao-pagina/BotaoPagina";
+import { SEO } from "../components/SEO";
 
 interface CarreirasHeroSection {
   hero_bg_img: string | null;
   hero_text: string | null;
+}
+
+interface SEOSection {
+  seo_title: string | null;
+  seo_description: string | null;
 }
 
 interface CarreirasFormSection {
@@ -32,6 +38,7 @@ interface CarreirasPageData {
   hero_section: CarreirasHeroSection;
   form_section: CarreirasFormSection;
   positions_section: CarreirasPositionsSection[];
+  seo_section: SEOSection;
 }
 
 
@@ -47,7 +54,7 @@ function CarreirasPage() {
   const [experiencia, setExperiencia] = useState<'sim' | 'nao' | null>(null);
   const [textoDescritivo, setTextoDescritivo] = useState('');
   const [curriculo, setCurriculo] = useState<File | null>(null);
-  
+
   // UI States
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [erroValidacao, setErroValidacao] = useState('');
@@ -64,6 +71,10 @@ function CarreirasPage() {
           hero_section: {
             hero_bg_img: require("../assets/carreiras-bkg.png"),
             hero_text: "Carreiras",
+          },
+          seo_section: {
+            seo_title: "Grupo Ballke | Carreiras",
+            seo_description: "Faça parte da equipe do Grupo Ballke. Confira nossas vagas disponíveis e envie seu currículo.",
           },
           form_section: {
             form_intro_text: "Faça parte de uma equipe que transforma desafios em inovação e promove soluções sustentáveis para um mundo melhor. No Grupo Ballke, acreditamos no poder das pessoas e investimos no desenvolvimento de talentos. Aqui, você encontrará um ambiente colaborativo, oportunidades de crescimento e a chance de contribuir ativamente para projetos de impacto global. Junte-se a nós e construa um futuro repleto de propósito e sucesso profissional. Explore nossas oportunidades e venha fazer a diferença!",
@@ -108,7 +119,7 @@ function CarreirasPage() {
     setCurriculo(null);
     // Reset file input
     const fileInput = document.getElementById('curriculo-upload') as HTMLInputElement;
-    if(fileInput) fileInput.value = '';
+    if (fileInput) fileInput.value = '';
   }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -180,6 +191,10 @@ function CarreirasPage() {
 
   return (
     <>
+      <SEO
+        title={content.seo_section.seo_title || undefined}
+        description={content.seo_section.seo_description || undefined}
+      />
       <section className="section-container carreiras-hero-background" style={heroStyle}>
         <h2 className="carreiras-hero-title">{content.hero_section.hero_text}</h2>
       </section>
@@ -190,42 +205,44 @@ function CarreirasPage() {
 
       <section className="section-container informacoes-pessoais-container">
         <h2 className="informacoes">{content.form_section.form_title}</h2>
-        
+
         <form className="form-container" onSubmit={handleSubmit}>
           <div className="um-campo">
-            <CampoDeTexto placeholder={content.form_section.form_name} required={true} valor={nome} onChange={setNome}/>
+            <CampoDeTexto placeholder={content.form_section.form_name} required={true} valor={nome} onChange={setNome} />
           </div>
           <div className='multiplos-campos'>
-            <CampoDeTexto placeholder={content.form_section.form_email} required={true} valor={email} onChange={setEmail}/>
-            <CampoDeTexto placeholder={content.form_section.form_age} required={true} valor={idade} onChange={setIdade}/>
-            <CampoDeTexto placeholder={content.form_section.form_phone} required={true} valor={telefone} onChange={setTelefone}/>
+            <CampoDeTexto placeholder={content.form_section.form_email} required={true} valor={email} onChange={setEmail} />
+            <CampoDeTexto placeholder={content.form_section.form_age} required={true} valor={idade} onChange={setIdade} />
+            <CampoDeTexto placeholder={content.form_section.form_phone} required={true} valor={telefone} onChange={setTelefone} />
           </div>
           <div className="um-campo">
-            <CampoDeTexto placeholder={content.form_section.form_position} required={true} valor={posicao} onChange={setPosicao}/>
+            <CampoDeTexto placeholder={content.form_section.form_position} required={true} valor={posicao} onChange={setPosicao} />
           </div>
 
           <div className="experience-wrapper">
             <p className="carreiras-text1" style={{ textAlign: 'center', width: '100%', marginBottom: '8px' }}>
               {content.form_section.form_experience}
             </p>
-            
+
             <div className="experience-row">
               <div className="button-group">
                 <BotaoPagina
                   type="button"
-                  texto="Sim" 
-                  isSelected={experiencia === 'sim'} 
+                  texto="Sim"
+                  isSelected={experiencia === 'sim'}
                   onClick={() => setExperiencia('sim')}
                 />
-                <BotaoPagina 
+                <BotaoPagina
                   type="button"
-                  texto="Não" 
-                  isSelected={experiencia === 'nao'} 
-                  onClick={() => { setExperiencia('nao'); 
-                  setTextoDescritivo(''); }}
+                  texto="Não"
+                  isSelected={experiencia === 'nao'}
+                  onClick={() => {
+                    setExperiencia('nao');
+                    setTextoDescritivo('');
+                  }}
                 />
               </div>
-              <CampoDeTexto placeholder={experiencePlaceholder} desabilitar={isDescritivoDisabled} valor={textoDescritivo} onChange={setTextoDescritivo}/>
+              <CampoDeTexto placeholder={experiencePlaceholder} desabilitar={isDescritivoDisabled} valor={textoDescritivo} onChange={setTextoDescritivo} />
             </div>
           </div>
 
@@ -241,25 +258,25 @@ function CarreirasPage() {
 
             <div className="submission-row">
               <div className="upload-container">
-                  <label htmlFor="curriculo-upload" className="botao-upload">
-                      {content.form_section.form_upload_text1}
-                      <br/>
-                      <span>{content.form_section.form_upload_text2}</span>
-                  </label>
-                  <input 
-                      id="curriculo-upload"
-                      type="file" 
-                      accept=".pdf,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-                      onChange={handleFileChange} 
-                      style={{display: 'none'}} 
-                  />
-                  {curriculo && (
-                    <p className="file-name">
-                        Arquivo selecionado: {curriculo.name.length > 80 ? curriculo.name.substring(0, 80) + '...' : curriculo.name}
-                    </p>
+                <label htmlFor="curriculo-upload" className="botao-upload">
+                  {content.form_section.form_upload_text1}
+                  <br />
+                  <span>{content.form_section.form_upload_text2}</span>
+                </label>
+                <input
+                  id="curriculo-upload"
+                  type="file"
+                  accept=".pdf,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                  onChange={handleFileChange}
+                  style={{ display: 'none' }}
+                />
+                {curriculo && (
+                  <p className="file-name">
+                    Arquivo selecionado: {curriculo.name.length > 80 ? curriculo.name.substring(0, 80) + '...' : curriculo.name}
+                  </p>
                 )}
               </div>
-              
+
               <button type="submit" className="submit-button-carreiras" disabled={formStatus === 'sending'}>
                 {formStatus === 'sending' ? 'Enviando...' : content.form_section.form_btn_text}
               </button>

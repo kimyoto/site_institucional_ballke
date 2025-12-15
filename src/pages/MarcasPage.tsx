@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./MarcasPage.css";
+import { SEO } from "../components/SEO";
 
 interface MarcasHeroSection {
   hero_bg_img: string | null;
   hero_text: string | null;
+}
+
+interface SEOSection {
+  seo_title: string | null;
+  seo_description: string | null;
 }
 
 interface MarcasContentSection {
@@ -19,6 +25,7 @@ interface MarcasContentSection {
 interface MarcasPageData {
   hero_section: MarcasHeroSection;
   content_section: MarcasContentSection;
+  seo_section: SEOSection;
 }
 
 function MarcasPage() {
@@ -31,9 +38,13 @@ function MarcasPage() {
       .catch((error) => {
         console.error("Erro ao buscar dados da página Marcas:", error);
         setContent({
-          hero_section: { 
-            hero_bg_img: require('../assets/marcas-bkg.png'), 
-            hero_text: "Nossas Marcas" 
+          hero_section: {
+            hero_bg_img: require('../assets/marcas-bkg.png'),
+            hero_text: "Nossas Marcas"
+          },
+          seo_section: {
+            seo_title: "Grupo Ballke | Nossas Marcas",
+            seo_description: "Conheça as marcas do Grupo Ballke: Magazine Médica, Nestsafe e B.Branding.",
           },
           content_section: {
             content_icon_magazine: require("../assets/magazinecolorido.png"),
@@ -58,39 +69,43 @@ function MarcasPage() {
   }
 
   function toEmbedUrl(url: string | null): string | null {
-  if (!url) return null;
+    if (!url) return null;
 
-  try {
-    // SHORTS
-    if (url.includes("youtube.com/shorts/")) {
-      const id = url.split("shorts/")[1].split("?")[0];
-      return `https://www.youtube.com/embed/${id}`;
+    try {
+      // SHORTS
+      if (url.includes("youtube.com/shorts/")) {
+        const id = url.split("shorts/")[1].split("?")[0];
+        return `https://www.youtube.com/embed/${id}`;
+      }
+
+      // WATCH
+      if (url.includes("watch?v=")) {
+        const id = new URL(url).searchParams.get("v");
+        return `https://www.youtube.com/embed/${id}`;
+      }
+
+      // YOUTU.BE
+      if (url.includes("youtu.be/")) {
+        const id = url.split("youtu.be/")[1].split("?")[0];
+        return `https://www.youtube.com/embed/${id}`;
+      }
+
+      // Se já for embed
+      if (url.includes("embed")) return url;
+
+      return url;
+    } catch (error) {
+      console.error("URL inválida:", error);
+      return null;
     }
-
-    // WATCH
-    if (url.includes("watch?v=")) {
-      const id = new URL(url).searchParams.get("v");
-      return `https://www.youtube.com/embed/${id}`;
-    }
-
-    // YOUTU.BE
-    if (url.includes("youtu.be/")) {
-      const id = url.split("youtu.be/")[1].split("?")[0];
-      return `https://www.youtube.com/embed/${id}`;
-    }
-
-    // Se já for embed
-    if (url.includes("embed")) return url;
-
-    return url;
-  } catch (error) {
-    console.error("URL inválida:", error);
-    return null;
   }
-}
 
   return (
     <>
+      <SEO
+        title={content.seo_section.seo_title || undefined}
+        description={content.seo_section.seo_description || undefined}
+      />
       <section className="section-container marcas-hero-background" style={heroStyle}>
         <h2 className="marcas-title">{content.hero_section.hero_text}</h2>
       </section>

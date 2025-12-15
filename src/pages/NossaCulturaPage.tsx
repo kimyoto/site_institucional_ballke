@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "./NossaCulturaPage.css";
+import { SEO } from "../components/SEO";
 
 interface NossaCulturaHeroSection {
   hero_bg_img: string | null;
   hero_text: string | null;
+}
+
+interface SEOSection {
+  seo_title: string | null;
+  seo_description: string | null;
 }
 
 interface NossaCulturaContentSection {
@@ -18,6 +24,7 @@ interface NossaCulturaContentSection {
 interface NossaCulturaPageData {
   hero_section: NossaCulturaHeroSection;
   content_section: NossaCulturaContentSection;
+  seo_section: SEOSection;
 }
 
 function NossaCulturaPage() {
@@ -30,9 +37,13 @@ function NossaCulturaPage() {
       .catch((error) => {
         console.error("Erro ao buscar dados da nossa cultura:", error);
         setContent({
-          hero_section: { 
-            hero_bg_img: require("../assets/nossacultura-topobkg.png"), 
-            hero_text: "Nossa Cultura" 
+          hero_section: {
+            hero_bg_img: require("../assets/nossacultura-topobkg.png"),
+            hero_text: "Nossa Cultura"
+          },
+          seo_section: {
+            seo_title: "Grupo Ballke | Nossa Cultura",
+            seo_description: "Saiba mais sobre a missão, visão e valores que guiam o Grupo Ballke.",
           },
           content_section: {
             content_missao_title: "Missão",
@@ -61,6 +72,10 @@ function NossaCulturaPage() {
 
   return (
     <>
+      <SEO
+        title={content.seo_section.seo_title || undefined}
+        description={content.seo_section.seo_description || undefined}
+      />
       <section className="section-container nossa-cultura-hero-background" style={heroStyle}>
         <h2 className="nossa-cultura-hero-title">{content.hero_section.hero_text}</h2>
       </section>
@@ -78,14 +93,14 @@ function NossaCulturaPage() {
 
         <h2 className="cultura-subtitle">{content.content_section.content_valores_title}</h2>
 
-      <ul className="cultura-values-list">
-        {valores.map((valor, index) => (
-          <li key={index}>
-            {valor.trim()}
-            {index === valores.length - 1 ? "." : ";"}
-          </li>
-        ))}
-      </ul>
+        <ul className="cultura-values-list">
+          {valores.map((valor, index) => (
+            <li key={index}>
+              {valor.trim()}
+              {index === valores.length - 1 ? "." : ";"}
+            </li>
+          ))}
+        </ul>
       </section>
     </>
   );

@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./QuemSomosPage.css";
 import { Link } from "react-router-dom";
+import { SEO } from "../components/SEO";
 
 interface QuemSomosHeroSection {
   hero_bg_img: string | null;
   hero_text: string | null;
+}
+
+interface SEOSection {
+  seo_title: string | null;
+  seo_description: string | null;
 }
 
 interface QuemSomosContentSection {
@@ -34,6 +40,7 @@ interface QuemSomosPageData {
   content_section: QuemSomosContentSection;
   cards_section: QuemSomosCardsSection;
   partners: Partner[];
+  seo_section: SEOSection;
 }
 
 function QuemSomosPage() {
@@ -46,9 +53,13 @@ function QuemSomosPage() {
       .catch((error) => {
         console.error("Error fetching Quem Somos data:", error);
         setContent({
-          hero_section: { 
-            hero_bg_img: require("../assets/topoquemsomos.png"), 
-            hero_text: "Quem Somos" 
+          hero_section: {
+            hero_bg_img: require("../assets/topoquemsomos.png"),
+            hero_text: "Quem Somos"
+          },
+          seo_section: {
+            seo_title: "Grupo Ballke | Quem Somos",
+            seo_description: "Saiba mais sobre o Grupo Ballke, nossa história, missão e valores.",
           },
           content_section: {
             content_title: "Grupo Ballke",
@@ -96,6 +107,10 @@ function QuemSomosPage() {
 
   return (
     <>
+      <SEO
+        title={content.seo_section.seo_title || undefined}
+        description={content.seo_section.seo_description || undefined}
+      />
       <section className="section-container quemsomos-hero-background" style={heroStyle}>
         <h2 className="text-topo-quemsomos">{content.hero_section.hero_text}</h2>
       </section>
@@ -136,7 +151,7 @@ function QuemSomosPage() {
               <h2 className="text-images-1">{content.cards_section.cards_text_unidade}</h2>
             </div>
           </div>
-          
+
           <div className="coluna">
             <Link to="/nossa-cultura" className="link-block-wrapper" >
               <img
@@ -160,16 +175,16 @@ function QuemSomosPage() {
           <div className="logos-container">
             {content.partners.map(partner => (
               <div key={partner.name} >
-                  <img
-                    src={partner.image || undefined} 
-                    alt={partner.name || undefined} 
-                    className="parceiros-logo" 
-                    />
+                <img
+                  src={partner.image || undefined}
+                  alt={partner.name || undefined}
+                  className="parceiros-logo"
+                />
               </div>
             ))}
           </div>
         </section>
-            )}
+      )}
     </>
   );
 }

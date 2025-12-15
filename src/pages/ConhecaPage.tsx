@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import "./ConhecaPage.css";
+import { SEO } from "../components/SEO";
 
 interface ConhecaHeroSection {
   hero_bg_img: string | null;
   hero_text_linha1: string | null;
   hero_text_linha2: string | null;
+}
+
+interface SEOSection {
+  seo_title: string | null;
+  seo_description: string | null;
 }
 
 interface ConhecaContentSection {
@@ -22,6 +28,7 @@ interface ConhecaPageData {
   hero_section: ConhecaHeroSection;
   content_section: ConhecaContentSection;
   timeline_section: ConhecaTimelineSection;
+  seo_section: SEOSection;
 }
 
 function ConhecaPage() {
@@ -39,6 +46,10 @@ function ConhecaPage() {
             hero_text_linha1: "Nossa trajetória",
             hero_text_linha2: "até aqui.",
           },
+          seo_section: {
+            seo_title: "Grupo Ballke | Conheça nossa História",
+            seo_description: "Conheça a trajetória do Grupo Ballke, uma jornada de inovação e compromisso com a saúde e bem-estar.",
+          },
           content_section: {
             content_bg_img: require("../assets/conhecabkg.png"),
             content_paragraph1: "A história do Grupo Ballke é uma jornada construída com dedicação, inovação e compromisso com a excelência. Desde o seu início, buscamos transformar a saúde e o bem-estar das pessoas, oferecendo soluções eficientes e de alta qualidade nos segmentos em que atuamos.",
@@ -53,7 +64,7 @@ function ConhecaPage() {
   }, []);
 
   if (!content) return <p>Carregando...</p>;
-  
+
   const heroStyle = {
     backgroundImage: `
       linear-gradient(rgba(17, 17, 17, 0.5), rgba(24, 24, 24, 0.5)),
@@ -69,6 +80,10 @@ function ConhecaPage() {
 
   return (
     <>
+      <SEO
+        title={content.seo_section.seo_title || undefined}
+        description={content.seo_section.seo_description || undefined}
+      />
       <section className="section-container conheca-hero-background" style={heroStyle}>
         <h2 className="topo-text-1">
           {content.hero_section.hero_text_linha1}
@@ -95,7 +110,7 @@ function ConhecaPage() {
           src={content.timeline_section.timeline_img}
           alt="Imagem Lona Conheça"
           className="conheca-lona-image"
-      />
+        />
       )}
     </>
   );
