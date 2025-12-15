@@ -11,11 +11,12 @@ import CarreirasPage from "./pages/CarreirasPage";
 import ContatoPage from "./pages/ContatoPage";
 import PoliticasPage from "./pages/PoliticasPage";
 import Footer from "./components/footer/Footer";
+import { SEOProvider } from "./contexts/SEOContent";
 
 const RedirectToExternal = () => {
   useEffect(() => {
     // Redireciona o navegador para a URL externa
-    window.location.href = "http://127.0.0.1:8000/admin/";
+    window.location.href = process.env.REACT_APP_BASE_URL + "/admin/";
   }, []);
 
   return <div>Redirecionando para o Admin...</div>;
@@ -23,21 +24,23 @@ const RedirectToExternal = () => {
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/admin" element={<RedirectToExternal />} />
-        <Route path="/conheca" element={<ConhecaPage />} />
-        <Route path="/quem-somos" element={<QuemSomosPage />} />
-        <Route path="/nossa-cultura" element={<NossaCulturaPage />} />
-        <Route path="/marcas" element={<MarcasPage />} />
-        <Route path="/carreiras" element={<CarreirasPage />} />
-        <Route path="/contato" element={<ContatoPage />} />
-        <Route path="/politicas" element={<PoliticasPage />}  />
-      </Routes>
-      <Footer />
-    </div>
+    <SEOProvider>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/admin" element={<RedirectToExternal />} />
+          <Route path="/conheca" element={<ConhecaPage />} />
+          <Route path="/quem-somos" element={<QuemSomosPage />} />
+          <Route path="/nossa-cultura" element={<NossaCulturaPage />} />
+          <Route path="/marcas" element={<MarcasPage />} />
+          <Route path="/carreiras" element={<CarreirasPage />} />
+          <Route path="/contato" element={<ContatoPage />} />
+          <Route path="/politicas" element={<PoliticasPage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </SEOProvider>
   );
 }
 
