@@ -28,7 +28,15 @@ export function SEO({ title, description }: SEOProps) {
     };
 
     // SEO por página
+    console.log("SEO Update - Title:", title);
+    console.log("SEO Update - Description:", description);
+
+    updateMeta("title", title); // Atualiza a TAG META title (não a aba do navegador)
     updateMeta("description", description);
+
+    // Open Graph / Facebook (Opcional mas recomendado)
+    updateMeta("og:title", title);
+    updateMeta("og:description", description);
 
     // SEO global (vem do Context)
     updateMeta("keywords", globalSEO?.keywords);

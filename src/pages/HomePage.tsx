@@ -36,12 +36,18 @@ interface JobsSection {
   jobs_btn_text: string | null;
 }
 
+interface SEOSection {
+  seo_title: string | null;
+  seo_description: string | null;
+}
+
 interface HomePageData {
   hero_section: HeroSection;
   brands_section: BrandsSection;
   timeline_section: TimelineSection;
   culture_section: CultureSection;
   jobs_section: JobsSection;
+  seo_section: SEOSection;
 }
 
 function HomePage() {
@@ -82,6 +88,10 @@ function HomePage() {
             jobs_bg_img: require("../assets/background5.png"),
             jobs_title: "Trabalhe Conosco",
             jobs_btn_text: "Vagas Disponíveis",
+          },
+          seo_section: {
+            seo_title: "Grupo Ballke | Soluções em Produtos e Serviços para Saúde",
+            seo_description: "O Grupo Ballke é referência no Brasil em distribuição de produtos para saúde, com mais de 20 anos de atuação, ampla variedade de itens e atendimento especializado.",
           },
         });
       });
@@ -127,8 +137,8 @@ function HomePage() {
   return (
     <>
       <SEO
-        title={content.hero_section.hero_text_linha1 || undefined}
-        description={content.hero_section.hero_text_linha2 || undefined}
+        title={content.seo_section.seo_title || undefined}
+        description={content.seo_section.seo_description || undefined}
       />
       <main className="sections-container">
         {/* HERO SECTION */}
