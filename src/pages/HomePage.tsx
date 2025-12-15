@@ -91,7 +91,7 @@ function HomePage() {
           },
           seo_section: {
             seo_title: "Grupo Ballke | Soluções em Produtos e Serviços para Saúde",
-            seo_description: "O Grupo Ballke é referência no Brasil em distribuição de produtos para saúde, com mais de 20 anos de atuação, ampla variedade de itens e atendimento especializado.",
+            seo_description: "O Grupo Ballke é referência no Brasil na distribuição de produtos para saúde, com mais de 20 anos de experiência, amplo portfólio e atendimento especializado.",
           },
         });
       });

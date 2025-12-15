@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useGlobalSEO } from "../contexts/SEOContent";
+import { useSEOGlobal } from "../contexts/SEOContent";
 
 interface SEOProps {
   title?: string;
@@ -7,7 +7,7 @@ interface SEOProps {
 }
 
 export function SEO({ title, description }: SEOProps) {
-  const { globalSEO } = useGlobalSEO();
+  const { seo_global } = useSEOGlobal();
 
   useEffect(() => {
     // Atualiza o title da aba
@@ -27,27 +27,18 @@ export function SEO({ title, description }: SEOProps) {
       element.setAttribute("content", content);
     };
 
-    // SEO por página
-    console.log("SEO Update - Title:", title);
-    console.log("SEO Update - Description:", description);
-
-    updateMeta("title", title); // Atualiza a TAG META title (não a aba do navegador)
+    updateMeta("title", title);
     updateMeta("description", description);
 
-    // Open Graph / Facebook (Opcional mas recomendado)
-    updateMeta("og:title", title);
-    updateMeta("og:description", description);
+    updateMeta("keywords", seo_global?.keywords);
+    updateMeta("author", seo_global?.author);
+    updateMeta("robots", seo_global?.robots);
+    updateMeta("country", seo_global?.country);
+    updateMeta("language", seo_global?.language);
+    updateMeta("currency", seo_global?.currency);
+    updateMeta("copyright", seo_global?.copyright);
 
-    // SEO global (vem do Context)
-    updateMeta("keywords", globalSEO?.keywords);
-    updateMeta("author", globalSEO?.author);
-    updateMeta("robots", globalSEO?.robots);
-    updateMeta("country", globalSEO?.country);
-    updateMeta("language", globalSEO?.language);
-    updateMeta("currency", globalSEO?.currency);
-    updateMeta("copyright", globalSEO?.copyright);
-
-  }, [title, description, globalSEO]);
+  }, [title, description, seo_global]);
 
   return null;
 }

@@ -11,23 +11,23 @@ interface GlobalSEO {
 }
 
 interface SEOContextData {
-    globalSEO: GlobalSEO | null;
+    seo_global: GlobalSEO | null;
 }
 
 const SEOContext = createContext<SEOContextData>({
-    globalSEO: null,
+    seo_global: null,
 });
 
 export const SEOProvider = ({ children }: { children: React.ReactNode }) => {
-    const [globalSEO, setGlobalSEO] = useState<GlobalSEO | null>(null);
+    const [seo_global, setSEOGlobal] = useState<GlobalSEO | null>(null);
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_BASE_URL}/api/seo/global/`)
             .then((res) => res.json())
-            .then((data) => setGlobalSEO(data))
+            .then((data) => setSEOGlobal(data.seo_global))
             .catch(() => {
                 // fallback seguro
-                setGlobalSEO({
+                setSEOGlobal({
                     keywords: "Grupo Ballke, Magazine Médica, distribuição de produtos médicos, materiais hospitalares, equipamentos médicos, produtos odontológicos, estética, veterinária, descartáveis, saúde e bem-estar, Chapecó, Santa Catarina, atacado de medicamentos, loja de produtos médicos",
                     author: "Grupo Ballke",
                     robots: "index, follow",
@@ -40,10 +40,10 @@ export const SEOProvider = ({ children }: { children: React.ReactNode }) => {
     }, []);
 
     return (
-        <SEOContext.Provider value={{ globalSEO }}>
+        <SEOContext.Provider value={{ seo_global }}>
             {children}
         </SEOContext.Provider>
     );
 };
 
-export const useGlobalSEO = () => useContext(SEOContext);
+export const useSEOGlobal = () => useContext(SEOContext);
