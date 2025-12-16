@@ -1,0 +1,14 @@
+# Dependências e logs
+node_modules
+npm-debug.log
+
+# Pasta de build do React (será gerada dentro do contêiner)
+build
+
+# Arquivos de ambiente local
+.env
+.env.local
+
+# Git
+.git
+.gitignore
