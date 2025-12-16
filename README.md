@@ -1,49 +1,74 @@
-# Getting Started with Create React App
+# 🎨 Frontend React - Site Institucional
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Interface moderna e responsiva do site corporativo, desenvolvida em React.
 
-## Available Scripts
+## 📋 Sumário
+1. [Visão Geral](#visão-geral)
+2. [Instalação e Rodando](#instalação-e-rodando)
+3. [Variáveis de Ambiente](#variáveis-de-ambiente)
+4. [Estrutura de Pastas](#estrutura-de-pastas)
+5. [Scripts Disponíveis](#scripts-disponíveis)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🎯 Visão Geral
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O frontend consome a API do CMS Django para renderizar conteúdo dinâmico.
+- **Porta Local (npm)**: `3000`
+- **Porta Docker**: `8080`
+- **Comunicação**: API REST
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 🚀 Instalação e Rodando
 
-### `npm test`
+### Opção A: Via Docker (Recomendado)
+Na raiz do projeto (onde está o `docker-compose.yml`):
+```bash
+docker-compose up -d --build
+```
+Acesse em: `http://localhost:8080`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Opção B: Desenvolvimento Local (Sem Docker)
 
-### `npm run build`
+1. Instale as dependências:
+```bash
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Crie o arquivo `.env` na raiz do frontend (veja seção abaixo).
 
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
+3. Inicie o servidor:
+```bash
+npm start
+```
+Acesse em: `http://localhost:3000`
 
-**Nota Importante sobre SEO (robots.txt e sitemap.xml):**
-Após executar `npm run build`, lembre-se de que os arquivos `public/robots.txt` e `sitemap-generator.js` (que gera `public/sitemap.xml`) contêm URLs de placeholder (`https://www.seusite.com`). Certifique-se de **atualizar essas URLs para o domínio real do seu site** antes de fazer o deploy final em produção.
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔑 Variáveis de Ambiente
 
-### `npm run eject`
+Crie um arquivo `.env` na pasta `Front-End React/`:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```env
+# URL da API do Django (Backend)
+REACT_APP_BASE_URL=http://localhost:8000/api
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 📁 Estrutura de Pastas
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+src/
+├── components/       # Componentes reutilizáveis (Header, Footer, UI)
+├── pages/           # Páginas principais (Home, Quem Somos, etc)
+├── services/        # Configuração da API (axios)
+├── styles/          # Estilos globais e temas
+├── App.js           # Rotas e layout principal
+└── index.js         # Ponto de entrada
+```
 
-## Learn More
+## 📦 Scripts Disponíveis
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `npm start`: Roda em modo de desenvolvimento.
+- `npm run build`: Gera a build de produção na pasta `build/`.
+- `npm test`: Roda os testes unitários.
