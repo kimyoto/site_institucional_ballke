@@ -18,6 +18,11 @@ RUN npm install
 # Copia todo o resto do código-fonte do projeto para o contêiner.
 COPY . .
 
+# Recebe a URL da API como argumento de build
+ARG REACT_APP_BASE_URL
+# Define a variável de ambiente para que o npm run build possa enxergá-la
+ENV REACT_APP_BASE_URL=$REACT_APP_BASE_URL
+
 # Executa o script de build do React para gerar a pasta /build com os arquivos estáticos.
 RUN npm run build
 
